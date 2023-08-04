@@ -12,5 +12,4 @@ public class HomeController {
     public String home(Principal principal) {
         return "Hello, " + principal.getName();
     }
-
 }
