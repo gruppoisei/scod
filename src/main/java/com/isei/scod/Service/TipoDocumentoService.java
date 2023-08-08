@@ -34,7 +34,7 @@ public class TipoDocumentoService {
         Optional<AltaTipodocumento> entity =  tipoDocumentoRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(" Alta Tipo Documento Entity non trovata per id:",id );
+            throw new NotFoundException(AltaTipodocumento.class, id );
 
         return tipoDocumentoMapper.fromAltaTipoDocumentoEntityToDTO(entity.get());
 

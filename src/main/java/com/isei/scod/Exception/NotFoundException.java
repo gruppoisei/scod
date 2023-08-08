@@ -8,7 +8,7 @@ public class NotFoundException extends Exception{
     public NotFoundException() {
     }
 
-    public NotFoundException(String message, Integer id) {
-        super(message + id);
+    public NotFoundException(Class c, Integer id) {
+        super(c.getName().toUpperCase() + "---Entity non trovata per id : " + id);
     }
 }
