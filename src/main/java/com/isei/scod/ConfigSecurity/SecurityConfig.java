@@ -15,6 +15,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.oauth2.jwt.JwtDecoder;
 import org.springframework.security.oauth2.jwt.JwtEncoder;
 import org.springframework.security.oauth2.jwt.NimbusJwtDecoder;
@@ -48,6 +49,12 @@ public class SecurityConfig  {
         source.registerCorsConfiguration("/**", configuration);
         return source;
     }
+
+    @Bean
+    public BCryptPasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
@@ -85,7 +92,7 @@ public class SecurityConfig  {
     public InMemoryUserDetailsManager users() {
         return new InMemoryUserDetailsManager(
                 User.withUsername("user")
-                        .password("{noop}password")
+                        .password(passwordEncoder.encode("password"))
                         .authorities("read")
                         .build()
         );

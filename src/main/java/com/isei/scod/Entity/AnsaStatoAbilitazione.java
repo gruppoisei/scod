@@ -16,8 +16,6 @@ import java.time.Instant;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANSA_STATO_ABILITAZIONE")
 public class AnsaStatoAbilitazione implements Serializable {
@@ -42,4 +40,43 @@ public class AnsaStatoAbilitazione implements Serializable {
     @Column(name = "ANSA_FLAG_ATTIVO")
     private Integer ansaFlagAttivo;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAnsaStatoAbilitazioneDesc() {
+        return ansaStatoAbilitazioneDesc;
+    }
+
+    public void setAnsaStatoAbilitazioneDesc(String ansaStatoAbilitazioneDesc) {
+        this.ansaStatoAbilitazioneDesc = ansaStatoAbilitazioneDesc;
+    }
+
+    public String getAnsaSysueser() {
+        return ansaSysueser;
+    }
+
+    public void setAnsaSysueser(String ansaSysueser) {
+        this.ansaSysueser = ansaSysueser;
+    }
+
+    public Instant getAnsaSysdate() {
+        return ansaSysdate;
+    }
+
+    public void setAnsaSysdate(Instant ansaSysdate) {
+        this.ansaSysdate = ansaSysdate;
+    }
+
+    public Integer getAnsaFlagAttivo() {
+        return ansaFlagAttivo;
+    }
+
+    public void setAnsaFlagAttivo(Integer ansaFlagAttivo) {
+        this.ansaFlagAttivo = ansaFlagAttivo;
+    }
 }

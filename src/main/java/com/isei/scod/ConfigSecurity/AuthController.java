@@ -24,9 +24,9 @@ public class AuthController {
     @PostMapping("/token")
     public LoginResponseDTO token(Authentication authentication) {
         LoginResponseDTO loginResponse = new LoginResponseDTO();
-        LOG.debug("Token requested for user: '{}'", authentication.getName());
+        LOG.info("Token requested for user: '{}'", authentication.getName());
         String token = tokenService.generateToken(authentication);
-        LOG.debug("Token granted: {}", token);
+        LOG.info("Token granted: {}", token);
         loginResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(6000).withUserId(1);
         return loginResponse;
     }
