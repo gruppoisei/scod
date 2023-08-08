@@ -92,7 +92,7 @@ public class SecurityConfig  {
     public InMemoryUserDetailsManager users() {
         return new InMemoryUserDetailsManager(
                 User.withUsername("user")
-                        .password(passwordEncoder.encode("password"))
+                        .password(passwordEncoder().encode("password"))
                         .authorities("read")
                         .build()
         );
