@@ -5,6 +5,7 @@ import com.isei.scod.Entity.AltaTipodocumento;
 import com.isei.scod.Exception.NotFoundException;
 import com.isei.scod.Mapper.TipoDocumentoMapper;
 import com.isei.scod.Repository.TipoDocumentoRepository;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class TipoDocumentoService {
     @Autowired
     TipoDocumentoMapper tipoDocumentoMapper;
 
-    public Boolean saveTipoDocumento(TipoDocumentoDTO dto) {
+    public Boolean saveTipoDocumento(@Valid TipoDocumentoDTO dto) {
 
         AltaTipodocumento entity = tipoDocumentoMapper.fromAltaTipoDocumentoDTOToEntity(dto);
 
