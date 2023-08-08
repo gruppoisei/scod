@@ -13,6 +13,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class TipoDocumentoDTO {
 
+    private Integer id;
+
     @Size(max = 100)
     private String altaTipodocumentodesc;
 
@@ -23,6 +25,14 @@ public class TipoDocumentoDTO {
     private LocalDate altaSysdate;
 
     private Integer altaFlagAttiva;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getAltaTipodocumentodesc() {
         return altaTipodocumentodesc;
