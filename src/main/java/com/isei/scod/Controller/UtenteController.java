@@ -5,6 +5,7 @@ import com.isei.scod.DTO.UserDetailDTO;
 import com.isei.scod.Service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,8 +32,8 @@ public class UtenteController {
 
     @GetMapping("/welcome")
     public String getWelcomePage() {
-
-        String username = ((UserDetailDTO) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getUsername();
+        SecurityContext context =  SecurityContextHolder.getContext();
+        String username = (context.getAuthentication().getName());
         return "hello, " + username;
     }
 
