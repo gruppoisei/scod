@@ -10,12 +10,10 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "OFFE_OFFERTA")
 public class OffeOfferta implements Serializable {
@@ -55,10 +53,10 @@ public class OffeOfferta implements Serializable {
     private Boolean offeOffertaapprovata;
 
     @Column(name = "OFFE_DATAOFFERTA")
-    private Instant offeDataofferta;
+    private LocalDate offeDataofferta;
 
     @Column(name = "OFFE_DATASCADENZA")
-    private Instant offeDatascadenza;
+    private LocalDate offeDatascadenza;
 
     @Size(max = 50)
     @NotNull
@@ -66,9 +64,120 @@ public class OffeOfferta implements Serializable {
     private String offeSysuser;
 
     @Column(name = "OFFE_SYSDATE")
-    private Instant offeSysdate;
+    private LocalDate offeSysdate;
 
     @Column(name = "OFFE_FLAG_ATTIVA")
     private Integer offeFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AnsoSocieta getOffeFkAnsocommittenteid() {
+        return offeFkAnsocommittenteid;
+    }
+
+    public void setOffeFkAnsocommittenteid(AnsoSocieta offeFkAnsocommittenteid) {
+        this.offeFkAnsocommittenteid = offeFkAnsocommittenteid;
+    }
+
+    public AnsoSocieta getOffeFkAnsosocietagruppo() {
+        return offeFkAnsosocietagruppo;
+    }
+
+    public void setOffeFkAnsosocietagruppo(AnsoSocieta offeFkAnsosocietagruppo) {
+        this.offeFkAnsosocietagruppo = offeFkAnsosocietagruppo;
+    }
+
+    public OftiTipoofferta getOffeFkOftioffertaid() {
+        return offeFkOftioffertaid;
+    }
+
+    public void setOffeFkOftioffertaid(OftiTipoofferta offeFkOftioffertaid) {
+        this.offeFkOftioffertaid = offeFkOftioffertaid;
+    }
+
+    public AnpePersona getOffeFkAnperefcommerciale() {
+        return offeFkAnperefcommerciale;
+    }
+
+    public void setOffeFkAnperefcommerciale(AnpePersona offeFkAnperefcommerciale) {
+        this.offeFkAnperefcommerciale = offeFkAnperefcommerciale;
+    }
+
+    public AnpePersona getOffeFkAnpeapprovatada() {
+        return offeFkAnpeapprovatada;
+    }
+
+    public void setOffeFkAnpeapprovatada(AnpePersona offeFkAnpeapprovatada) {
+        this.offeFkAnpeapprovatada = offeFkAnpeapprovatada;
+    }
+
+    public AndoDocumento getOffeFkAndodocumentoofferta() {
+        return offeFkAndodocumentoofferta;
+    }
+
+    public void setOffeFkAndodocumentoofferta(AndoDocumento offeFkAndodocumentoofferta) {
+        this.offeFkAndodocumentoofferta = offeFkAndodocumentoofferta;
+    }
+
+    public BigDecimal getOffeImportoofferta() {
+        return offeImportoofferta;
+    }
+
+    public void setOffeImportoofferta(BigDecimal offeImportoofferta) {
+        this.offeImportoofferta = offeImportoofferta;
+    }
+
+    public Boolean getOffeOffertaapprovata() {
+        return offeOffertaapprovata;
+    }
+
+    public void setOffeOffertaapprovata(Boolean offeOffertaapprovata) {
+        this.offeOffertaapprovata = offeOffertaapprovata;
+    }
+
+    public LocalDate getOffeDataofferta() {
+        return offeDataofferta;
+    }
+
+    public void setOffeDataofferta(LocalDate offeDataofferta) {
+        this.offeDataofferta = offeDataofferta;
+    }
+
+    public LocalDate getOffeDatascadenza() {
+        return offeDatascadenza;
+    }
+
+    public void setOffeDatascadenza(LocalDate offeDatascadenza) {
+        this.offeDatascadenza = offeDatascadenza;
+    }
+
+    public String getOffeSysuser() {
+        return offeSysuser;
+    }
+
+    public void setOffeSysuser(String offeSysuser) {
+        this.offeSysuser = offeSysuser;
+    }
+
+    public LocalDate getOffeSysdate() {
+        return offeSysdate;
+    }
+
+    public void setOffeSysdate(LocalDate offeSysdate) {
+        this.offeSysdate = offeSysdate;
+    }
+
+    public Integer getOffeFlagAttiva() {
+        return offeFlagAttiva;
+    }
+
+    public void setOffeFlagAttiva(Integer offeFlagAttiva) {
+        this.offeFlagAttiva = offeFlagAttiva;
+    }
 }

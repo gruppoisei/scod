@@ -4,9 +4,7 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.hibernate.Hibernate;
 
 import java.io.Serializable;
@@ -14,8 +12,6 @@ import java.util.Objects;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Embeddable
 public class AntpTitoloStudioPersonaId implements Serializable {
     private static final long serialVersionUID = 6028466450979968710L;
@@ -41,4 +37,19 @@ public class AntpTitoloStudioPersonaId implements Serializable {
         return Objects.hash(antpFkAnstTitolostudioid, antpFkAnpePersonaid);
     }
 
+    public Integer getAntpFkAnstTitolostudioid() {
+        return antpFkAnstTitolostudioid;
+    }
+
+    public void setAntpFkAnstTitolostudioid(Integer antpFkAnstTitolostudioid) {
+        this.antpFkAnstTitolostudioid = antpFkAnstTitolostudioid;
+    }
+
+    public Integer getAntpFkAnpePersonaid() {
+        return antpFkAnpePersonaid;
+    }
+
+    public void setAntpFkAnpePersonaid(Integer antpFkAnpePersonaid) {
+        this.antpFkAnpePersonaid = antpFkAnpePersonaid;
+    }
 }

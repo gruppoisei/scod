@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "COAP_TIPOATTIVITAPROGETTO")
 public class CoapTipoattivitaprogetto implements Serializable {
@@ -37,9 +35,48 @@ public class CoapTipoattivitaprogetto implements Serializable {
     private String coapSysuser;
 
     @Column(name = "COAP_SYSDATE")
-    private Instant coapSysdate;
+    private LocalDate coapSysdate;
 
     @Column(name = "COAP_FLAG_ATTIVA")
     private Integer coapFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCoapTipoattprogdesc() {
+        return coapTipoattprogdesc;
+    }
+
+    public void setCoapTipoattprogdesc(String coapTipoattprogdesc) {
+        this.coapTipoattprogdesc = coapTipoattprogdesc;
+    }
+
+    public String getCoapSysuser() {
+        return coapSysuser;
+    }
+
+    public void setCoapSysuser(String coapSysuser) {
+        this.coapSysuser = coapSysuser;
+    }
+
+    public LocalDate getCoapSysdate() {
+        return coapSysdate;
+    }
+
+    public void setCoapSysdate(LocalDate coapSysdate) {
+        this.coapSysdate = coapSysdate;
+    }
+
+    public Integer getCoapFlagAttiva() {
+        return coapFlagAttiva;
+    }
+
+    public void setCoapFlagAttiva(Integer coapFlagAttiva) {
+        this.coapFlagAttiva = coapFlagAttiva;
+    }
 }

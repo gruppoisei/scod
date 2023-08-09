@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANTP_TITOLO_STUDIO_PERSONA")
 public class AntpTitoloStudioPersona implements Serializable {
@@ -33,7 +31,7 @@ public class AntpTitoloStudioPersona implements Serializable {
     private AnpePersona antpFkAnpePersonaid;
 
     @Column(name = "ANTP_DATA_CONSEGUIMENTO")
-    private Instant antpDataConseguimento;
+    private LocalDate antpDataConseguimento;
 
     @Column(name = "ANTP_VOTO")
     private Integer antpVoto;
@@ -48,9 +46,80 @@ public class AntpTitoloStudioPersona implements Serializable {
     private String antpSysuser;
 
     @Column(name = "ANTP_SYSDATE")
-    private Instant antpSysdate;
+    private LocalDate antpSysdate;
 
     @Column(name = "ANTP_FLAG_ATTIVA")
     private Integer antpFlagAttiva;
 
+    public AntpTitoloStudioPersonaId getId() {
+        return id;
+    }
+
+    public void setId(AntpTitoloStudioPersonaId id) {
+        this.id = id;
+    }
+
+    public AnstTitoloStudio getAntpFkAnstTitolostudioid() {
+        return antpFkAnstTitolostudioid;
+    }
+
+    public void setAntpFkAnstTitolostudioid(AnstTitoloStudio antpFkAnstTitolostudioid) {
+        this.antpFkAnstTitolostudioid = antpFkAnstTitolostudioid;
+    }
+
+    public AnpePersona getAntpFkAnpePersonaid() {
+        return antpFkAnpePersonaid;
+    }
+
+    public void setAntpFkAnpePersonaid(AnpePersona antpFkAnpePersonaid) {
+        this.antpFkAnpePersonaid = antpFkAnpePersonaid;
+    }
+
+    public LocalDate getAntpDataConseguimento() {
+        return antpDataConseguimento;
+    }
+
+    public void setAntpDataConseguimento(LocalDate antpDataConseguimento) {
+        this.antpDataConseguimento = antpDataConseguimento;
+    }
+
+    public Integer getAntpVoto() {
+        return antpVoto;
+    }
+
+    public void setAntpVoto(Integer antpVoto) {
+        this.antpVoto = antpVoto;
+    }
+
+    public String getAntpIstituto() {
+        return antpIstituto;
+    }
+
+    public void setAntpIstituto(String antpIstituto) {
+        this.antpIstituto = antpIstituto;
+    }
+
+    public String getAntpSysuser() {
+        return antpSysuser;
+    }
+
+    public void setAntpSysuser(String antpSysuser) {
+        this.antpSysuser = antpSysuser;
+    }
+
+    public LocalDate getAntpSysdate() {
+        return antpSysdate;
+    }
+
+    public void setAntpSysdate(LocalDate antpSysdate) {
+        this.antpSysdate = antpSysdate;
+    }
+
+    public Integer getAntpFlagAttiva() {
+        return antpFlagAttiva;
+    }
+
+    public void setAntpFlagAttiva(Integer antpFlagAttiva) {
+        this.antpFlagAttiva = antpFlagAttiva;
+    }
 }

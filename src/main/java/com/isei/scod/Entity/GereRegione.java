@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "GERE_REGIONE")
 public class GereRegione implements Serializable {
@@ -41,6 +39,53 @@ public class GereRegione implements Serializable {
     private Integer gereFlagAttiva;
 
     @Column(name = "GERE_SYSDATE")
-    private Instant gereSysdate;
+    private LocalDate gereSysdate;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getGereDeno() {
+        return gereDeno;
+    }
+
+    public void setGereDeno(String gereDeno) {
+        this.gereDeno = gereDeno;
+    }
+
+    public GeagAreaGeografica getGereFkGeagAgeoid() {
+        return gereFkGeagAgeoid;
+    }
+
+    public void setGereFkGeagAgeoid(GeagAreaGeografica gereFkGeagAgeoid) {
+        this.gereFkGeagAgeoid = gereFkGeagAgeoid;
+    }
+
+    public String getGereSysuser() {
+        return gereSysuser;
+    }
+
+    public void setGereSysuser(String gereSysuser) {
+        this.gereSysuser = gereSysuser;
+    }
+
+    public Integer getGereFlagAttiva() {
+        return gereFlagAttiva;
+    }
+
+    public void setGereFlagAttiva(Integer gereFlagAttiva) {
+        this.gereFlagAttiva = gereFlagAttiva;
+    }
+
+    public LocalDate getGereSysdate() {
+        return gereSysdate;
+    }
+
+    public void setGereSysdate(LocalDate gereSysdate) {
+        this.gereSysdate = gereSysdate;
+    }
 }

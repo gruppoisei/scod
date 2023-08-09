@@ -10,12 +10,10 @@ import lombok.Setter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ORDO_DETTAGLIOORDINE")
 public class OrdoDettaglioordine implements Serializable {
@@ -52,9 +50,88 @@ public class OrdoDettaglioordine implements Serializable {
     private String ordoSysuser;
 
     @Column(name = "ORDO_SYSDATE")
-    private Instant ordoSysdate;
+    private LocalDate ordoSysdate;
 
     @Column(name = "ORDO_FLAG_ATTIVA")
     private Integer ordoFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public OrspTiposervizioprodotto getOrdoFkOrsptipoprodservid() {
+        return ordoFkOrsptipoprodservid;
+    }
+
+    public void setOrdoFkOrsptipoprodservid(OrspTiposervizioprodotto ordoFkOrsptipoprodservid) {
+        this.ordoFkOrsptipoprodservid = ordoFkOrsptipoprodservid;
+    }
+
+    public OrdiOrdine getOrdoFkOrdiordineid() {
+        return ordoFkOrdiordineid;
+    }
+
+    public void setOrdoFkOrdiordineid(OrdiOrdine ordoFkOrdiordineid) {
+        this.ordoFkOrdiordineid = ordoFkOrdiordineid;
+    }
+
+    public String getOrdoProdservdesc() {
+        return ordoProdservdesc;
+    }
+
+    public void setOrdoProdservdesc(String ordoProdservdesc) {
+        this.ordoProdservdesc = ordoProdservdesc;
+    }
+
+    public String getOrdoNote() {
+        return ordoNote;
+    }
+
+    public void setOrdoNote(String ordoNote) {
+        this.ordoNote = ordoNote;
+    }
+
+    public BigDecimal getOrdoCosto() {
+        return ordoCosto;
+    }
+
+    public void setOrdoCosto(BigDecimal ordoCosto) {
+        this.ordoCosto = ordoCosto;
+    }
+
+    public Integer getOrdoQuantita() {
+        return ordoQuantita;
+    }
+
+    public void setOrdoQuantita(Integer ordoQuantita) {
+        this.ordoQuantita = ordoQuantita;
+    }
+
+    public String getOrdoSysuser() {
+        return ordoSysuser;
+    }
+
+    public void setOrdoSysuser(String ordoSysuser) {
+        this.ordoSysuser = ordoSysuser;
+    }
+
+    public LocalDate getOrdoSysdate() {
+        return ordoSysdate;
+    }
+
+    public void setOrdoSysdate(LocalDate ordoSysdate) {
+        this.ordoSysdate = ordoSysdate;
+    }
+
+    public Integer getOrdoFlagAttiva() {
+        return ordoFlagAttiva;
+    }
+
+    public void setOrdoFlagAttiva(Integer ordoFlagAttiva) {
+        this.ordoFlagAttiva = ordoFlagAttiva;
+    }
 }

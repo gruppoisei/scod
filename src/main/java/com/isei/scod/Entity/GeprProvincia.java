@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "GEPR_PROVINCIA")
 public class GeprProvincia implements Serializable {
@@ -43,9 +41,64 @@ public class GeprProvincia implements Serializable {
     private String geprSysuser;
 
     @Column(name = "GEPR_SYSDATE")
-    private Instant geprSysdate;
+    private LocalDate geprSysdate;
 
     @Column(name = "GEPR_FLAG_ATTIVA")
     private Integer geprFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public GereRegione getGeprFkGereRegioneid() {
+        return geprFkGereRegioneid;
+    }
+
+    public void setGeprFkGereRegioneid(GereRegione geprFkGereRegioneid) {
+        this.geprFkGereRegioneid = geprFkGereRegioneid;
+    }
+
+    public String getGeprDeno() {
+        return geprDeno;
+    }
+
+    public void setGeprDeno(String geprDeno) {
+        this.geprDeno = geprDeno;
+    }
+
+    public String getGeprSigla() {
+        return geprSigla;
+    }
+
+    public void setGeprSigla(String geprSigla) {
+        this.geprSigla = geprSigla;
+    }
+
+    public String getGeprSysuser() {
+        return geprSysuser;
+    }
+
+    public void setGeprSysuser(String geprSysuser) {
+        this.geprSysuser = geprSysuser;
+    }
+
+    public LocalDate getGeprSysdate() {
+        return geprSysdate;
+    }
+
+    public void setGeprSysdate(LocalDate geprSysdate) {
+        this.geprSysdate = geprSysdate;
+    }
+
+    public Integer getGeprFlagAttiva() {
+        return geprFlagAttiva;
+    }
+
+    public void setGeprFlagAttiva(Integer geprFlagAttiva) {
+        this.geprFlagAttiva = geprFlagAttiva;
+    }
 }

@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "COTC_TIPOCONTRATTO")
 public class CotcTipocontratto implements Serializable {
@@ -37,9 +35,48 @@ public class CotcTipocontratto implements Serializable {
     private String cotcSysuser;
 
     @Column(name = "COTC_SYSDATE")
-    private Instant cotcSysdate;
+    private LocalDate cotcSysdate;
 
     @Column(name = "COTC_FLAG_ATTIVA")
     private Integer cotcFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCotcContratto() {
+        return cotcContratto;
+    }
+
+    public void setCotcContratto(String cotcContratto) {
+        this.cotcContratto = cotcContratto;
+    }
+
+    public String getCotcSysuser() {
+        return cotcSysuser;
+    }
+
+    public void setCotcSysuser(String cotcSysuser) {
+        this.cotcSysuser = cotcSysuser;
+    }
+
+    public LocalDate getCotcSysdate() {
+        return cotcSysdate;
+    }
+
+    public void setCotcSysdate(LocalDate cotcSysdate) {
+        this.cotcSysdate = cotcSysdate;
+    }
+
+    public Integer getCotcFlagAttiva() {
+        return cotcFlagAttiva;
+    }
+
+    public void setCotcFlagAttiva(Integer cotcFlagAttiva) {
+        this.cotcFlagAttiva = cotcFlagAttiva;
+    }
 }

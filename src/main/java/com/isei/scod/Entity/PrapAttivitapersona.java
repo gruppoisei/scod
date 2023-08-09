@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "PRAP_ATTIVITAPERSONA")
 public class PrapAttivitapersona implements Serializable {
@@ -41,9 +39,64 @@ public class PrapAttivitapersona implements Serializable {
     private String prapSysuser;
 
     @Column(name = "PRAP_SYSDATE")
-    private Instant prapSysdate;
+    private LocalDate prapSysdate;
 
     @Column(name = "PRAP_FLAG_ATTIVA")
     private Integer prapFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AnpePersona getPrapFkAnpepersonaid() {
+        return prapFkAnpepersonaid;
+    }
+
+    public void setPrapFkAnpepersonaid(AnpePersona prapFkAnpepersonaid) {
+        this.prapFkAnpepersonaid = prapFkAnpepersonaid;
+    }
+
+    public PrrpRuoloprogetto getPrapFkPrrpruoloprogettoid() {
+        return prapFkPrrpruoloprogettoid;
+    }
+
+    public void setPrapFkPrrpruoloprogettoid(PrrpRuoloprogetto prapFkPrrpruoloprogettoid) {
+        this.prapFkPrrpruoloprogettoid = prapFkPrrpruoloprogettoid;
+    }
+
+    public PratAttivitaprogetto getPrapFkPratattivitaprogettoid() {
+        return prapFkPratattivitaprogettoid;
+    }
+
+    public void setPrapFkPratattivitaprogettoid(PratAttivitaprogetto prapFkPratattivitaprogettoid) {
+        this.prapFkPratattivitaprogettoid = prapFkPratattivitaprogettoid;
+    }
+
+    public String getPrapSysuser() {
+        return prapSysuser;
+    }
+
+    public void setPrapSysuser(String prapSysuser) {
+        this.prapSysuser = prapSysuser;
+    }
+
+    public LocalDate getPrapSysdate() {
+        return prapSysdate;
+    }
+
+    public void setPrapSysdate(LocalDate prapSysdate) {
+        this.prapSysdate = prapSysdate;
+    }
+
+    public Integer getPrapFlagAttiva() {
+        return prapFlagAttiva;
+    }
+
+    public void setPrapFlagAttiva(Integer prapFlagAttiva) {
+        this.prapFlagAttiva = prapFlagAttiva;
+    }
 }

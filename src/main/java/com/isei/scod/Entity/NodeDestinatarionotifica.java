@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "NODE_DESTINATARIONOTIFICA")
 public class NodeDestinatarionotifica implements Serializable {
@@ -37,9 +35,56 @@ public class NodeDestinatarionotifica implements Serializable {
     private String nodeSysuser;
 
     @Column(name = "NODE_SYSDATE")
-    private Instant nodeSysdate;
+    private LocalDate nodeSysdate;
 
     @Column(name = "NODE_FLAG_ATTIVA")
     private Integer nodeFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public NotiNotifica getNodeFkNotiNotificaid() {
+        return nodeFkNotiNotificaid;
+    }
+
+    public void setNodeFkNotiNotificaid(NotiNotifica nodeFkNotiNotificaid) {
+        this.nodeFkNotiNotificaid = nodeFkNotiNotificaid;
+    }
+
+    public AnpePersona getNodeFkAnpePersonaid() {
+        return nodeFkAnpePersonaid;
+    }
+
+    public void setNodeFkAnpePersonaid(AnpePersona nodeFkAnpePersonaid) {
+        this.nodeFkAnpePersonaid = nodeFkAnpePersonaid;
+    }
+
+    public String getNodeSysuser() {
+        return nodeSysuser;
+    }
+
+    public void setNodeSysuser(String nodeSysuser) {
+        this.nodeSysuser = nodeSysuser;
+    }
+
+    public LocalDate getNodeSysdate() {
+        return nodeSysdate;
+    }
+
+    public void setNodeSysdate(LocalDate nodeSysdate) {
+        this.nodeSysdate = nodeSysdate;
+    }
+
+    public Integer getNodeFlagAttiva() {
+        return nodeFlagAttiva;
+    }
+
+    public void setNodeFlagAttiva(Integer nodeFlagAttiva) {
+        this.nodeFlagAttiva = nodeFlagAttiva;
+    }
 }

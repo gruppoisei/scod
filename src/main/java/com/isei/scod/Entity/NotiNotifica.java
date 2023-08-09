@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "NOTI_NOTIFICA")
 public class NotiNotifica implements Serializable {
@@ -24,10 +22,10 @@ public class NotiNotifica implements Serializable {
     private Integer id;
 
     @Column(name = "NOTI_DATANOTIFICA")
-    private Instant notiDatanotifica;
+    private LocalDate notiDatanotifica;
 
     @Column(name = "NOTI_DATAINVIONOTIFICA")
-    private Instant notiDatainvionotifica;
+    private LocalDate notiDatainvionotifica;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "NOTI_FK_NOTN_TIPONOTIFICAID")
@@ -39,9 +37,64 @@ public class NotiNotifica implements Serializable {
     private String notiSysuser;
 
     @Column(name = "NOTI_SYSDATE")
-    private Instant notiSysdate;
+    private LocalDate notiSysdate;
 
     @Column(name = "NOTI_FLAG_ATTIVA")
     private Integer notiFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public LocalDate getNotiDatanotifica() {
+        return notiDatanotifica;
+    }
+
+    public void setNotiDatanotifica(LocalDate notiDatanotifica) {
+        this.notiDatanotifica = notiDatanotifica;
+    }
+
+    public LocalDate getNotiDatainvionotifica() {
+        return notiDatainvionotifica;
+    }
+
+    public void setNotiDatainvionotifica(LocalDate notiDatainvionotifica) {
+        this.notiDatainvionotifica = notiDatainvionotifica;
+    }
+
+    public NotnTiponotifica getNotiFkNotnTiponotificaid() {
+        return notiFkNotnTiponotificaid;
+    }
+
+    public void setNotiFkNotnTiponotificaid(NotnTiponotifica notiFkNotnTiponotificaid) {
+        this.notiFkNotnTiponotificaid = notiFkNotnTiponotificaid;
+    }
+
+    public String getNotiSysuser() {
+        return notiSysuser;
+    }
+
+    public void setNotiSysuser(String notiSysuser) {
+        this.notiSysuser = notiSysuser;
+    }
+
+    public LocalDate getNotiSysdate() {
+        return notiSysdate;
+    }
+
+    public void setNotiSysdate(LocalDate notiSysdate) {
+        this.notiSysdate = notiSysdate;
+    }
+
+    public Integer getNotiFlagAttiva() {
+        return notiFlagAttiva;
+    }
+
+    public void setNotiFlagAttiva(Integer notiFlagAttiva) {
+        this.notiFlagAttiva = notiFlagAttiva;
+    }
 }

@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "PRPR_PROGETTO")
 public class PrprProgetto implements Serializable {
@@ -42,9 +40,64 @@ public class PrprProgetto implements Serializable {
     private String prprSysuser;
 
     @Column(name = "PRPR_SYSDATE")
-    private Instant prprSysdate;
+    private LocalDate prprSysdate;
 
     @Column(name = "PRPR_FLAG_ATTIVA")
     private Integer prprFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public OrdiOrdine getPrprFkOrdiordineid() {
+        return prprFkOrdiordineid;
+    }
+
+    public void setPrprFkOrdiordineid(OrdiOrdine prprFkOrdiordineid) {
+        this.prprFkOrdiordineid = prprFkOrdiordineid;
+    }
+
+    public CotiTipocommessa getTipoTipocommessaid() {
+        return tipoTipocommessaid;
+    }
+
+    public void setTipoTipocommessaid(CotiTipocommessa tipoTipocommessaid) {
+        this.tipoTipocommessaid = tipoTipocommessaid;
+    }
+
+    public String getPrprNome() {
+        return prprNome;
+    }
+
+    public void setPrprNome(String prprNome) {
+        this.prprNome = prprNome;
+    }
+
+    public String getPrprSysuser() {
+        return prprSysuser;
+    }
+
+    public void setPrprSysuser(String prprSysuser) {
+        this.prprSysuser = prprSysuser;
+    }
+
+    public LocalDate getPrprSysdate() {
+        return prprSysdate;
+    }
+
+    public void setPrprSysdate(LocalDate prprSysdate) {
+        this.prprSysdate = prprSysdate;
+    }
+
+    public Integer getPrprFlagAttiva() {
+        return prprFlagAttiva;
+    }
+
+    public void setPrprFlagAttiva(Integer prprFlagAttiva) {
+        this.prprFlagAttiva = prprFlagAttiva;
+    }
 }

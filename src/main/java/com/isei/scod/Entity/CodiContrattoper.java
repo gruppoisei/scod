@@ -4,18 +4,14 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "CODI_CONTRATTOPERS")
 public class CodiContrattoper implements Serializable {
@@ -48,10 +44,10 @@ public class CodiContrattoper implements Serializable {
 
     @NotNull
     @Column(name = "CODI_DATAINIZIOCONTRATTO", nullable = false)
-    private Instant codiDatainiziocontratto;
+    private LocalDate codiDatainiziocontratto;
 
     @Column(name = "CODI_DATAFINECONTRATTO")
-    private Instant codiDatafinecontratto;
+    private LocalDate codiDatafinecontratto;
 
     @Column(name = "CODI_SMARTWORKING")
     private Boolean codiSmartworking;
@@ -66,9 +62,120 @@ public class CodiContrattoper implements Serializable {
     private String codiSysuser;
 
     @Column(name = "CODI_SYSDATE")
-    private Instant codiSysdate;
+    private LocalDate codiSysdate;
 
     @Column(name = "CODI_FLAG_ATTIVA")
     private Integer codiFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public CotcTipocontratto getCodiFkCotctipocontrattoid() {
+        return codiFkCotctipocontrattoid;
+    }
+
+    public void setCodiFkCotctipocontrattoid(CotcTipocontratto codiFkCotctipocontrattoid) {
+        this.codiFkCotctipocontrattoid = codiFkCotctipocontrattoid;
+    }
+
+    public AnpePersona getCodiFkAnpepersonaid() {
+        return codiFkAnpepersonaid;
+    }
+
+    public void setCodiFkAnpepersonaid(AnpePersona codiFkAnpepersonaid) {
+        this.codiFkAnpepersonaid = codiFkAnpepersonaid;
+    }
+
+    public CoccCcnl getCodiFkCoccccnlid() {
+        return codiFkCoccccnlid;
+    }
+
+    public void setCodiFkCoccccnlid(CoccCcnl codiFkCoccccnlid) {
+        this.codiFkCoccccnlid = codiFkCoccccnlid;
+    }
+
+    public ColiLivello getCodiFkColilivelloid() {
+        return codiFkColilivelloid;
+    }
+
+    public void setCodiFkColilivelloid(ColiLivello codiFkColilivelloid) {
+        this.codiFkColilivelloid = codiFkColilivelloid;
+    }
+
+    public BigDecimal getCodiRalcompenso() {
+        return codiRalcompenso;
+    }
+
+    public void setCodiRalcompenso(BigDecimal codiRalcompenso) {
+        this.codiRalcompenso = codiRalcompenso;
+    }
+
+    public Integer getCodiMonteore() {
+        return codiMonteore;
+    }
+
+    public void setCodiMonteore(Integer codiMonteore) {
+        this.codiMonteore = codiMonteore;
+    }
+
+    public LocalDate getCodiDatainiziocontratto() {
+        return codiDatainiziocontratto;
+    }
+
+    public void setCodiDatainiziocontratto(LocalDate codiDatainiziocontratto) {
+        this.codiDatainiziocontratto = codiDatainiziocontratto;
+    }
+
+    public LocalDate getCodiDatafinecontratto() {
+        return codiDatafinecontratto;
+    }
+
+    public void setCodiDatafinecontratto(LocalDate codiDatafinecontratto) {
+        this.codiDatafinecontratto = codiDatafinecontratto;
+    }
+
+    public Boolean getCodiSmartworking() {
+        return codiSmartworking;
+    }
+
+    public void setCodiSmartworking(Boolean codiSmartworking) {
+        this.codiSmartworking = codiSmartworking;
+    }
+
+    public String getCodiNote() {
+        return codiNote;
+    }
+
+    public void setCodiNote(String codiNote) {
+        this.codiNote = codiNote;
+    }
+
+    public String getCodiSysuser() {
+        return codiSysuser;
+    }
+
+    public void setCodiSysuser(String codiSysuser) {
+        this.codiSysuser = codiSysuser;
+    }
+
+    public LocalDate getCodiSysdate() {
+        return codiSysdate;
+    }
+
+    public void setCodiSysdate(LocalDate codiSysdate) {
+        this.codiSysdate = codiSysdate;
+    }
+
+    public Integer getCodiFlagAttiva() {
+        return codiFlagAttiva;
+    }
+
+    public void setCodiFlagAttiva(Integer codiFlagAttiva) {
+        this.codiFlagAttiva = codiFlagAttiva;
+    }
 }
