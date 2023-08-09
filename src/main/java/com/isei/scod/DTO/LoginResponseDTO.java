@@ -18,6 +18,8 @@ public class LoginResponseDTO {
 
    public Integer expiresIn;
 
+   public String refreshToken;
+
    public LoginResponseDTO withUserName(String userName){
        this.userName = userName;
        return this;
@@ -35,6 +37,11 @@ public class LoginResponseDTO {
 
     public LoginResponseDTO withExpirationTime(Integer expiresIn){
         this.expiresIn = expiresIn;
+        return this;
+    }
+
+    public LoginResponseDTO withRefreshToken(String refreshToken){
+        this.refreshToken = refreshToken;
         return this;
     }
 
