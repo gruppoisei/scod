@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "GETO_TOPONIMO")
 public class GetoToponimo implements Serializable {
@@ -33,9 +31,40 @@ public class GetoToponimo implements Serializable {
     private String getoSysuser;
 
     @Column(name = "GETO_SYSDATE")
-    private Instant getoSysdate;
+    private LocalDate getoSysdate;
 
     @Column(name = "GETO_FLAG_ATTIVA")
     private Integer getoFlagAttiva;
 
+    public String getGetoToponimoid() {
+        return getoToponimoid;
+    }
+
+    public void setGetoToponimoid(String getoToponimoid) {
+        this.getoToponimoid = getoToponimoid;
+    }
+
+    public String getGetoSysuser() {
+        return getoSysuser;
+    }
+
+    public void setGetoSysuser(String getoSysuser) {
+        this.getoSysuser = getoSysuser;
+    }
+
+    public LocalDate getGetoSysdate() {
+        return getoSysdate;
+    }
+
+    public void setGetoSysdate(LocalDate getoSysdate) {
+        this.getoSysdate = getoSysdate;
+    }
+
+    public Integer getGetoFlagAttiva() {
+        return getoFlagAttiva;
+    }
+
+    public void setGetoFlagAttiva(Integer getoFlagAttiva) {
+        this.getoFlagAttiva = getoFlagAttiva;
+    }
 }

@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANCF_CORSOFORMAZIONE")
 public class AncfCorsoformazione implements Serializable {
@@ -37,9 +35,48 @@ public class AncfCorsoformazione implements Serializable {
     private String ancfSysuser;
 
     @Column(name = "ANCF_SYSDATE")
-    private Instant ancfSysdate;
+    private LocalDate ancfSysdate;
 
     @Column(name = "ANCF_FLAG_ATTIVA")
     private Integer ancfFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAncfCorsoformazionedesc() {
+        return ancfCorsoformazionedesc;
+    }
+
+    public void setAncfCorsoformazionedesc(String ancfCorsoformazionedesc) {
+        this.ancfCorsoformazionedesc = ancfCorsoformazionedesc;
+    }
+
+    public String getAncfSysuser() {
+        return ancfSysuser;
+    }
+
+    public void setAncfSysuser(String ancfSysuser) {
+        this.ancfSysuser = ancfSysuser;
+    }
+
+    public LocalDate getAncfSysdate() {
+        return ancfSysdate;
+    }
+
+    public void setAncfSysdate(LocalDate ancfSysdate) {
+        this.ancfSysdate = ancfSysdate;
+    }
+
+    public Integer getAncfFlagAttiva() {
+        return ancfFlagAttiva;
+    }
+
+    public void setAncfFlagAttiva(Integer ancfFlagAttiva) {
+        this.ancfFlagAttiva = ancfFlagAttiva;
+    }
 }

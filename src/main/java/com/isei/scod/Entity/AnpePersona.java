@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANPE_PERSONA")
 public class AnpePersona implements Serializable {
@@ -34,16 +32,16 @@ public class AnpePersona implements Serializable {
     private String anpeCognome;
 
     @Column(name = "ANPE_DATANASCITA")
-    private Instant anpeDatanascita;
+    private LocalDate anpeDatanascita;
 
     @Column(name = "ANPE_DATAIDONEITAMEDICA")
-    private Instant anpeDataidoneitamedica;
+    private LocalDate anpeDataidoneitamedica;
 
     @Column(name = "ANPE_DATASCADENZAIDONEITAMEDICA")
-    private Instant anpeDatascadenzaidoneitamedica;
+    private LocalDate anpeDatascadenzaidoneitamedica;
 
     @Column(name = "ANPE_DATACORSOSICUREZZA")
-    private Instant anpeDatacorsosicurezza;
+    private LocalDate anpeDatacorsosicurezza;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
@@ -136,7 +134,7 @@ public class AnpePersona implements Serializable {
     private String anpeEmailpersonale;
 
     @Column(name = "ANPE_SYSDATE")
-    private Instant anpeSysdate;
+    private LocalDate anpeSysdate;
 
     @Size(max = 50)
     @NotNull
@@ -146,4 +144,251 @@ public class AnpePersona implements Serializable {
     @Column(name = "ANPE_FLAG_ATTIVA")
     private Integer anpeFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAnpeNome() {
+        return anpeNome;
+    }
+
+    public void setAnpeNome(String anpeNome) {
+        this.anpeNome = anpeNome;
+    }
+
+    public String getAnpeCognome() {
+        return anpeCognome;
+    }
+
+    public void setAnpeCognome(String anpeCognome) {
+        this.anpeCognome = anpeCognome;
+    }
+
+    public LocalDate getAnpeDatanascita() {
+        return anpeDatanascita;
+    }
+
+    public void setAnpeDatanascita(LocalDate anpeDatanascita) {
+        this.anpeDatanascita = anpeDatanascita;
+    }
+
+    public LocalDate getAnpeDataidoneitamedica() {
+        return anpeDataidoneitamedica;
+    }
+
+    public void setAnpeDataidoneitamedica(LocalDate anpeDataidoneitamedica) {
+        this.anpeDataidoneitamedica = anpeDataidoneitamedica;
+    }
+
+    public LocalDate getAnpeDatascadenzaidoneitamedica() {
+        return anpeDatascadenzaidoneitamedica;
+    }
+
+    public void setAnpeDatascadenzaidoneitamedica(LocalDate anpeDatascadenzaidoneitamedica) {
+        this.anpeDatascadenzaidoneitamedica = anpeDatascadenzaidoneitamedica;
+    }
+
+    public LocalDate getAnpeDatacorsosicurezza() {
+        return anpeDatacorsosicurezza;
+    }
+
+    public void setAnpeDatacorsosicurezza(LocalDate anpeDatacorsosicurezza) {
+        this.anpeDatacorsosicurezza = anpeDatacorsosicurezza;
+    }
+
+    public AnsoSocieta getAnpeFkAnsoSocietaid() {
+        return anpeFkAnsoSocietaid;
+    }
+
+    public void setAnpeFkAnsoSocietaid(AnsoSocieta anpeFkAnsoSocietaid) {
+        this.anpeFkAnsoSocietaid = anpeFkAnsoSocietaid;
+    }
+
+    public String getAnpeCodicefiscale() {
+        return anpeCodicefiscale;
+    }
+
+    public void setAnpeCodicefiscale(String anpeCodicefiscale) {
+        this.anpeCodicefiscale = anpeCodicefiscale;
+    }
+
+    public String getAnpePartitaiva() {
+        return anpePartitaiva;
+    }
+
+    public void setAnpePartitaiva(String anpePartitaiva) {
+        this.anpePartitaiva = anpePartitaiva;
+    }
+
+    public GepaPaese getAnpeFkGepaPaeseidPaesenascita() {
+        return anpeFkGepaPaeseidPaesenascita;
+    }
+
+    public void setAnpeFkGepaPaeseidPaesenascita(GepaPaese anpeFkGepaPaeseidPaesenascita) {
+        this.anpeFkGepaPaeseidPaesenascita = anpeFkGepaPaeseidPaesenascita;
+    }
+
+    public GepaPaese getAnpeFkGepaPaeseidPaesedomicilio() {
+        return anpeFkGepaPaeseidPaesedomicilio;
+    }
+
+    public void setAnpeFkGepaPaeseidPaesedomicilio(GepaPaese anpeFkGepaPaeseidPaesedomicilio) {
+        this.anpeFkGepaPaeseidPaesedomicilio = anpeFkGepaPaeseidPaesedomicilio;
+    }
+
+    public GepaPaese getAnpeFkGepaPaeseidPaeseresidenza() {
+        return anpeFkGepaPaeseidPaeseresidenza;
+    }
+
+    public void setAnpeFkGepaPaeseidPaeseresidenza(GepaPaese anpeFkGepaPaeseidPaeseresidenza) {
+        this.anpeFkGepaPaeseidPaeseresidenza = anpeFkGepaPaeseidPaeseresidenza;
+    }
+
+    public GecoComune getAnpeFkGecoComuneidComunenascita() {
+        return anpeFkGecoComuneidComunenascita;
+    }
+
+    public void setAnpeFkGecoComuneidComunenascita(GecoComune anpeFkGecoComuneidComunenascita) {
+        this.anpeFkGecoComuneidComunenascita = anpeFkGecoComuneidComunenascita;
+    }
+
+    public GecoComune getAnpeFkGecoComuneidComuneresidenza() {
+        return anpeFkGecoComuneidComuneresidenza;
+    }
+
+    public void setAnpeFkGecoComuneidComuneresidenza(GecoComune anpeFkGecoComuneidComuneresidenza) {
+        this.anpeFkGecoComuneidComuneresidenza = anpeFkGecoComuneidComuneresidenza;
+    }
+
+    public GecoComune getAnpeFkGecoComuneidComunedomicilio() {
+        return anpeFkGecoComuneidComunedomicilio;
+    }
+
+    public void setAnpeFkGecoComuneidComunedomicilio(GecoComune anpeFkGecoComuneidComunedomicilio) {
+        this.anpeFkGecoComuneidComunedomicilio = anpeFkGecoComuneidComunedomicilio;
+    }
+
+    public GetoToponimo getAnpeFkGetoToponimoidToponimoresidenza() {
+        return anpeFkGetoToponimoidToponimoresidenza;
+    }
+
+    public void setAnpeFkGetoToponimoidToponimoresidenza(GetoToponimo anpeFkGetoToponimoidToponimoresidenza) {
+        this.anpeFkGetoToponimoidToponimoresidenza = anpeFkGetoToponimoidToponimoresidenza;
+    }
+
+    public GetoToponimo getAnpeFkGetoToponimoidToponimodomicilio() {
+        return anpeFkGetoToponimoidToponimodomicilio;
+    }
+
+    public void setAnpeFkGetoToponimoidToponimodomicilio(GetoToponimo anpeFkGetoToponimoidToponimodomicilio) {
+        this.anpeFkGetoToponimoidToponimodomicilio = anpeFkGetoToponimoidToponimodomicilio;
+    }
+
+    public String getAnpeIndirizzoresidenza() {
+        return anpeIndirizzoresidenza;
+    }
+
+    public void setAnpeIndirizzoresidenza(String anpeIndirizzoresidenza) {
+        this.anpeIndirizzoresidenza = anpeIndirizzoresidenza;
+    }
+
+    public String getAnpeNumerocivicoresidenza() {
+        return anpeNumerocivicoresidenza;
+    }
+
+    public void setAnpeNumerocivicoresidenza(String anpeNumerocivicoresidenza) {
+        this.anpeNumerocivicoresidenza = anpeNumerocivicoresidenza;
+    }
+
+    public String getAnpeCapresidenza() {
+        return anpeCapresidenza;
+    }
+
+    public void setAnpeCapresidenza(String anpeCapresidenza) {
+        this.anpeCapresidenza = anpeCapresidenza;
+    }
+
+    public String getAnpeIndirizzodomicilio() {
+        return anpeIndirizzodomicilio;
+    }
+
+    public void setAnpeIndirizzodomicilio(String anpeIndirizzodomicilio) {
+        this.anpeIndirizzodomicilio = anpeIndirizzodomicilio;
+    }
+
+    public String getAnpeNumerocivicodomicilio() {
+        return anpeNumerocivicodomicilio;
+    }
+
+    public void setAnpeNumerocivicodomicilio(String anpeNumerocivicodomicilio) {
+        this.anpeNumerocivicodomicilio = anpeNumerocivicodomicilio;
+    }
+
+    public String getAnpeCapdomicilio() {
+        return anpeCapdomicilio;
+    }
+
+    public void setAnpeCapdomicilio(String anpeCapdomicilio) {
+        this.anpeCapdomicilio = anpeCapdomicilio;
+    }
+
+    public String getAnpeNtelefono1() {
+        return anpeNtelefono1;
+    }
+
+    public void setAnpeNtelefono1(String anpeNtelefono1) {
+        this.anpeNtelefono1 = anpeNtelefono1;
+    }
+
+    public String getAnpeNtelefono2() {
+        return anpeNtelefono2;
+    }
+
+    public void setAnpeNtelefono2(String anpeNtelefono2) {
+        this.anpeNtelefono2 = anpeNtelefono2;
+    }
+
+    public String getAnpeEmailaziendale() {
+        return anpeEmailaziendale;
+    }
+
+    public void setAnpeEmailaziendale(String anpeEmailaziendale) {
+        this.anpeEmailaziendale = anpeEmailaziendale;
+    }
+
+    public String getAnpeEmailpersonale() {
+        return anpeEmailpersonale;
+    }
+
+    public void setAnpeEmailpersonale(String anpeEmailpersonale) {
+        this.anpeEmailpersonale = anpeEmailpersonale;
+    }
+
+    public LocalDate getAnpeSysdate() {
+        return anpeSysdate;
+    }
+
+    public void setAnpeSysdate(LocalDate anpeSysdate) {
+        this.anpeSysdate = anpeSysdate;
+    }
+
+    public String getAnpeSysuser() {
+        return anpeSysuser;
+    }
+
+    public void setAnpeSysuser(String anpeSysuser) {
+        this.anpeSysuser = anpeSysuser;
+    }
+
+    public Integer getAnpeFlagAttiva() {
+        return anpeFlagAttiva;
+    }
+
+    public void setAnpeFlagAttiva(Integer anpeFlagAttiva) {
+        this.anpeFlagAttiva = anpeFlagAttiva;
+    }
 }

@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANDF_DOCUMENTISOCIETA")
 public class AndfDocumentisocieta implements Serializable {
@@ -37,9 +35,56 @@ public class AndfDocumentisocieta implements Serializable {
     private String andfSysuser;
 
     @Column(name = "ANDF_SYSDATE")
-    private Instant andfSysdate;
+    private LocalDate andfSysdate;
 
     @Column(name = "ANDF_FLAG_ATTIVA")
     private Integer andfFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AnsoSocieta getAndfFkAnsoSocietaid() {
+        return andfFkAnsoSocietaid;
+    }
+
+    public void setAndfFkAnsoSocietaid(AnsoSocieta andfFkAnsoSocietaid) {
+        this.andfFkAnsoSocietaid = andfFkAnsoSocietaid;
+    }
+
+    public AndoDocumento getAndfFkAndoDocumentoid() {
+        return andfFkAndoDocumentoid;
+    }
+
+    public void setAndfFkAndoDocumentoid(AndoDocumento andfFkAndoDocumentoid) {
+        this.andfFkAndoDocumentoid = andfFkAndoDocumentoid;
+    }
+
+    public String getAndfSysuser() {
+        return andfSysuser;
+    }
+
+    public void setAndfSysuser(String andfSysuser) {
+        this.andfSysuser = andfSysuser;
+    }
+
+    public LocalDate getAndfSysdate() {
+        return andfSysdate;
+    }
+
+    public void setAndfSysdate(LocalDate andfSysdate) {
+        this.andfSysdate = andfSysdate;
+    }
+
+    public Integer getAndfFlagAttiva() {
+        return andfFlagAttiva;
+    }
+
+    public void setAndfFlagAttiva(Integer andfFlagAttiva) {
+        this.andfFlagAttiva = andfFlagAttiva;
+    }
 }

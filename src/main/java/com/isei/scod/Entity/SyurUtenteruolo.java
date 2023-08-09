@@ -10,8 +10,6 @@ import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "SYUR_UTENTERUOLO")
 public class SyurUtenteruolo implements Serializable {
@@ -28,4 +26,27 @@ public class SyurUtenteruolo implements Serializable {
     @JoinColumn(name = "SYUR_IDRUOLOSYS")
     private SyruRuolisistema syurIdruolosys;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public SyutUtente getSyurIdutente() {
+        return syurIdutente;
+    }
+
+    public void setSyurIdutente(SyutUtente syurIdutente) {
+        this.syurIdutente = syurIdutente;
+    }
+
+    public SyruRuolisistema getSyurIdruolosys() {
+        return syurIdruolosys;
+    }
+
+    public void setSyurIdruolosys(SyruRuolisistema syurIdruolosys) {
+        this.syurIdruolosys = syurIdruolosys;
+    }
 }

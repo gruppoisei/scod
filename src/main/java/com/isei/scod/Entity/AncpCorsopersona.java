@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANCP_CORSOPERSONA")
 public class AncpCorsopersona implements Serializable {
@@ -32,10 +30,10 @@ public class AncpCorsopersona implements Serializable {
     private AnpePersona ancpFkAnpePersonaid;
 
     @Column(name = "ANCP_DATA_INIZIO")
-    private Instant ancpDataInizio;
+    private LocalDate ancpDataInizio;
 
     @Column(name = "ANCP_DATA_FINE")
-    private Instant ancpDataFine;
+    private LocalDate ancpDataFine;
 
     @Size(max = 50)
     @NotNull
@@ -43,9 +41,72 @@ public class AncpCorsopersona implements Serializable {
     private String ancpSysuser;
 
     @Column(name = "ANCP_SYSDATE")
-    private Instant ancpSysdate;
+    private LocalDate ancpSysdate;
 
     @Column(name = "ANCP_FLAG_ATTIVA")
     private Integer ancpFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AncfCorsoformazione getAncpFkAncfCorsoformazioneid() {
+        return ancpFkAncfCorsoformazioneid;
+    }
+
+    public void setAncpFkAncfCorsoformazioneid(AncfCorsoformazione ancpFkAncfCorsoformazioneid) {
+        this.ancpFkAncfCorsoformazioneid = ancpFkAncfCorsoformazioneid;
+    }
+
+    public AnpePersona getAncpFkAnpePersonaid() {
+        return ancpFkAnpePersonaid;
+    }
+
+    public void setAncpFkAnpePersonaid(AnpePersona ancpFkAnpePersonaid) {
+        this.ancpFkAnpePersonaid = ancpFkAnpePersonaid;
+    }
+
+    public LocalDate getAncpDataInizio() {
+        return ancpDataInizio;
+    }
+
+    public void setAncpDataInizio(LocalDate ancpDataInizio) {
+        this.ancpDataInizio = ancpDataInizio;
+    }
+
+    public LocalDate getAncpDataFine() {
+        return ancpDataFine;
+    }
+
+    public void setAncpDataFine(LocalDate ancpDataFine) {
+        this.ancpDataFine = ancpDataFine;
+    }
+
+    public String getAncpSysuser() {
+        return ancpSysuser;
+    }
+
+    public void setAncpSysuser(String ancpSysuser) {
+        this.ancpSysuser = ancpSysuser;
+    }
+
+    public LocalDate getAncpSysdate() {
+        return ancpSysdate;
+    }
+
+    public void setAncpSysdate(LocalDate ancpSysdate) {
+        this.ancpSysdate = ancpSysdate;
+    }
+
+    public Integer getAncpFlagAttiva() {
+        return ancpFlagAttiva;
+    }
+
+    public void setAncpFlagAttiva(Integer ancpFlagAttiva) {
+        this.ancpFlagAttiva = ancpFlagAttiva;
+    }
 }

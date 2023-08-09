@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANDP_DOCUMENTIPERSONA")
 public class AndpDocumentipersona implements Serializable {
@@ -37,9 +35,56 @@ public class AndpDocumentipersona implements Serializable {
     private String andpSysuser;
 
     @Column(name = "ANDP_SYSDATE")
-    private Instant andpSysdate;
+    private LocalDate andpSysdate;
 
     @Column(name = "ANDP_FLAG_ATTIVA")
     private Integer andpFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AnpePersona getAndpFkAnpePersonaid() {
+        return andpFkAnpePersonaid;
+    }
+
+    public void setAndpFkAnpePersonaid(AnpePersona andpFkAnpePersonaid) {
+        this.andpFkAnpePersonaid = andpFkAnpePersonaid;
+    }
+
+    public AndoDocumento getAndpFkAndoDocumentoid() {
+        return andpFkAndoDocumentoid;
+    }
+
+    public void setAndpFkAndoDocumentoid(AndoDocumento andpFkAndoDocumentoid) {
+        this.andpFkAndoDocumentoid = andpFkAndoDocumentoid;
+    }
+
+    public String getAndpSysuser() {
+        return andpSysuser;
+    }
+
+    public void setAndpSysuser(String andpSysuser) {
+        this.andpSysuser = andpSysuser;
+    }
+
+    public LocalDate getAndpSysdate() {
+        return andpSysdate;
+    }
+
+    public void setAndpSysdate(LocalDate andpSysdate) {
+        this.andpSysdate = andpSysdate;
+    }
+
+    public Integer getAndpFlagAttiva() {
+        return andpFlagAttiva;
+    }
+
+    public void setAndpFlagAttiva(Integer andpFlagAttiva) {
+        this.andpFlagAttiva = andpFlagAttiva;
+    }
 }

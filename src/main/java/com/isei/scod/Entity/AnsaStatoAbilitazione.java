@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -35,7 +35,7 @@ public class AnsaStatoAbilitazione implements Serializable {
     private String ansaSysueser;
 
     @Column(name = "ANSA_SYSDATE")
-    private Instant ansaSysdate;
+    private LocalDate ansaSysdate;
 
     @Column(name = "ANSA_FLAG_ATTIVO")
     private Integer ansaFlagAttivo;
@@ -64,11 +64,11 @@ public class AnsaStatoAbilitazione implements Serializable {
         this.ansaSysueser = ansaSysueser;
     }
 
-    public Instant getAnsaSysdate() {
+    public LocalDate getAnsaSysdate() {
         return ansaSysdate;
     }
 
-    public void setAnsaSysdate(Instant ansaSysdate) {
+    public void setAnsaSysdate(LocalDate ansaSysdate) {
         this.ansaSysdate = ansaSysdate;
     }
 
