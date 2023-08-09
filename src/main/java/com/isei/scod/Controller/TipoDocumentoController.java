@@ -4,7 +4,6 @@ import com.isei.scod.DTO.TipoDocumentoDTO;
 import com.isei.scod.Exception.NotFoundException;
 import com.isei.scod.Service.TipoDocumentoService;
 import jakarta.validation.ConstraintViolationException;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

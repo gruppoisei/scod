@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANSO_SOCIETA")
 public class AnsoSocieta implements Serializable {
@@ -83,9 +81,144 @@ public class AnsoSocieta implements Serializable {
     private String ansoSysuser;
 
     @Column(name = "ANSO_SYSDATE")
-    private Instant ansoSysdate;
+    private LocalDate ansoSysdate;
 
     @Column(name = "ANSO_FLAG_ATTIVA")
     private Integer ansoFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AntsTiposocieta getAnsoFkAntsTiposocid() {
+        return ansoFkAntsTiposocid;
+    }
+
+    public void setAnsoFkAntsTiposocid(AntsTiposocieta ansoFkAntsTiposocid) {
+        this.ansoFkAntsTiposocid = ansoFkAntsTiposocid;
+    }
+
+    public String getAnsoRagionesociale() {
+        return ansoRagionesociale;
+    }
+
+    public void setAnsoRagionesociale(String ansoRagionesociale) {
+        this.ansoRagionesociale = ansoRagionesociale;
+    }
+
+    public String getAnsoPartitaiva() {
+        return ansoPartitaiva;
+    }
+
+    public void setAnsoPartitaiva(String ansoPartitaiva) {
+        this.ansoPartitaiva = ansoPartitaiva;
+    }
+
+    public PrprProgetto getAnsoFkPrprProgettoid() {
+        return ansoFkPrprProgettoid;
+    }
+
+    public void setAnsoFkPrprProgettoid(PrprProgetto ansoFkPrprProgettoid) {
+        this.ansoFkPrprProgettoid = ansoFkPrprProgettoid;
+    }
+
+    public GecoComune getAnsoFkGecoComuneid() {
+        return ansoFkGecoComuneid;
+    }
+
+    public void setAnsoFkGecoComuneid(GecoComune ansoFkGecoComuneid) {
+        this.ansoFkGecoComuneid = ansoFkGecoComuneid;
+    }
+
+    public GepaPaese getAnsoFkGepaPaeseid() {
+        return ansoFkGepaPaeseid;
+    }
+
+    public void setAnsoFkGepaPaeseid(GepaPaese ansoFkGepaPaeseid) {
+        this.ansoFkGepaPaeseid = ansoFkGepaPaeseid;
+    }
+
+    public GetoToponimo getAnsoGetoToponimoid() {
+        return ansoGetoToponimoid;
+    }
+
+    public void setAnsoGetoToponimoid(GetoToponimo ansoGetoToponimoid) {
+        this.ansoGetoToponimoid = ansoGetoToponimoid;
+    }
+
+    public String getAnsoSede() {
+        return ansoSede;
+    }
+
+    public void setAnsoSede(String ansoSede) {
+        this.ansoSede = ansoSede;
+    }
+
+    public String getAnsoIndirizzo() {
+        return ansoIndirizzo;
+    }
+
+    public void setAnsoIndirizzo(String ansoIndirizzo) {
+        this.ansoIndirizzo = ansoIndirizzo;
+    }
+
+    public String getAnsoNumerocivico() {
+        return ansoNumerocivico;
+    }
+
+    public void setAnsoNumerocivico(String ansoNumerocivico) {
+        this.ansoNumerocivico = ansoNumerocivico;
+    }
+
+    public String getAnsoCap() {
+        return ansoCap;
+    }
+
+    public void setAnsoCap(String ansoCap) {
+        this.ansoCap = ansoCap;
+    }
+
+    public String getAnsoEmail() {
+        return ansoEmail;
+    }
+
+    public void setAnsoEmail(String ansoEmail) {
+        this.ansoEmail = ansoEmail;
+    }
+
+    public String getAnsoTelefono() {
+        return ansoTelefono;
+    }
+
+    public void setAnsoTelefono(String ansoTelefono) {
+        this.ansoTelefono = ansoTelefono;
+    }
+
+    public String getAnsoSysuser() {
+        return ansoSysuser;
+    }
+
+    public void setAnsoSysuser(String ansoSysuser) {
+        this.ansoSysuser = ansoSysuser;
+    }
+
+    public LocalDate getAnsoSysdate() {
+        return ansoSysdate;
+    }
+
+    public void setAnsoSysdate(LocalDate ansoSysdate) {
+        this.ansoSysdate = ansoSysdate;
+    }
+
+    public Integer getAnsoFlagAttiva() {
+        return ansoFlagAttiva;
+    }
+
+    public void setAnsoFlagAttiva(Integer ansoFlagAttiva) {
+        this.ansoFlagAttiva = ansoFlagAttiva;
+    }
 }

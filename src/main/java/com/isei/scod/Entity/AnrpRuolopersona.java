@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANRP_RUOLOPERSONA")
 public class AnrpRuolopersona implements Serializable {
@@ -32,10 +30,10 @@ public class AnrpRuolopersona implements Serializable {
     private AnruRuolo anrpFkAnruRuoloid;
 
     @Column(name = "ANRP_DATAINIZIO")
-    private Instant anrpDatainizio;
+    private LocalDate anrpDatainizio;
 
     @Column(name = "ANRP_DATAFINE")
-    private Instant anrpDatafine;
+    private LocalDate anrpDatafine;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "ANRP_FK_ANPE_PERSONATUTORID")
@@ -58,10 +56,10 @@ public class AnrpRuolopersona implements Serializable {
     private String anrpFormazionetrasversale3anno;
 
     @Column(name = "ANRP_DATAINIZIOFORMTECNICA")
-    private Instant anrpDatainizioformtecnica;
+    private LocalDate anrpDatainizioformtecnica;
 
     @Column(name = "ANRP_DATAFINEFORMTECNICA")
-    private Instant anrpDatafineformtecnica;
+    private LocalDate anrpDatafineformtecnica;
 
     @Size(max = 50)
     @NotNull
@@ -69,9 +67,128 @@ public class AnrpRuolopersona implements Serializable {
     private String anrpSysuser;
 
     @Column(name = "ANRP_SYSDATE")
-    private Instant anrpSysdate;
+    private LocalDate anrpSysdate;
 
     @Column(name = "ANRP_FLAG_ATTIVA")
     private Integer anrpFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AnpePersona getAnrpFkAnpePersonaid() {
+        return anrpFkAnpePersonaid;
+    }
+
+    public void setAnrpFkAnpePersonaid(AnpePersona anrpFkAnpePersonaid) {
+        this.anrpFkAnpePersonaid = anrpFkAnpePersonaid;
+    }
+
+    public AnruRuolo getAnrpFkAnruRuoloid() {
+        return anrpFkAnruRuoloid;
+    }
+
+    public void setAnrpFkAnruRuoloid(AnruRuolo anrpFkAnruRuoloid) {
+        this.anrpFkAnruRuoloid = anrpFkAnruRuoloid;
+    }
+
+    public LocalDate getAnrpDatainizio() {
+        return anrpDatainizio;
+    }
+
+    public void setAnrpDatainizio(LocalDate anrpDatainizio) {
+        this.anrpDatainizio = anrpDatainizio;
+    }
+
+    public LocalDate getAnrpDatafine() {
+        return anrpDatafine;
+    }
+
+    public void setAnrpDatafine(LocalDate anrpDatafine) {
+        this.anrpDatafine = anrpDatafine;
+    }
+
+    public AnpePersona getAnrpFkAnpePersonatutorid() {
+        return anrpFkAnpePersonatutorid;
+    }
+
+    public void setAnrpFkAnpePersonatutorid(AnpePersona anrpFkAnpePersonatutorid) {
+        this.anrpFkAnpePersonatutorid = anrpFkAnpePersonatutorid;
+    }
+
+    public String getAnrpNote() {
+        return anrpNote;
+    }
+
+    public void setAnrpNote(String anrpNote) {
+        this.anrpNote = anrpNote;
+    }
+
+    public String getAnrpFormazionetrasversale1anno() {
+        return anrpFormazionetrasversale1anno;
+    }
+
+    public void setAnrpFormazionetrasversale1anno(String anrpFormazionetrasversale1anno) {
+        this.anrpFormazionetrasversale1anno = anrpFormazionetrasversale1anno;
+    }
+
+    public String getAnrpFormazionetrasversale2anno() {
+        return anrpFormazionetrasversale2anno;
+    }
+
+    public void setAnrpFormazionetrasversale2anno(String anrpFormazionetrasversale2anno) {
+        this.anrpFormazionetrasversale2anno = anrpFormazionetrasversale2anno;
+    }
+
+    public String getAnrpFormazionetrasversale3anno() {
+        return anrpFormazionetrasversale3anno;
+    }
+
+    public void setAnrpFormazionetrasversale3anno(String anrpFormazionetrasversale3anno) {
+        this.anrpFormazionetrasversale3anno = anrpFormazionetrasversale3anno;
+    }
+
+    public LocalDate getAnrpDatainizioformtecnica() {
+        return anrpDatainizioformtecnica;
+    }
+
+    public void setAnrpDatainizioformtecnica(LocalDate anrpDatainizioformtecnica) {
+        this.anrpDatainizioformtecnica = anrpDatainizioformtecnica;
+    }
+
+    public LocalDate getAnrpDatafineformtecnica() {
+        return anrpDatafineformtecnica;
+    }
+
+    public void setAnrpDatafineformtecnica(LocalDate anrpDatafineformtecnica) {
+        this.anrpDatafineformtecnica = anrpDatafineformtecnica;
+    }
+
+    public String getAnrpSysuser() {
+        return anrpSysuser;
+    }
+
+    public void setAnrpSysuser(String anrpSysuser) {
+        this.anrpSysuser = anrpSysuser;
+    }
+
+    public LocalDate getAnrpSysdate() {
+        return anrpSysdate;
+    }
+
+    public void setAnrpSysdate(LocalDate anrpSysdate) {
+        this.anrpSysdate = anrpSysdate;
+    }
+
+    public Integer getAnrpFlagAttiva() {
+        return anrpFlagAttiva;
+    }
+
+    public void setAnrpFlagAttiva(Integer anrpFlagAttiva) {
+        this.anrpFlagAttiva = anrpFlagAttiva;
+    }
 }

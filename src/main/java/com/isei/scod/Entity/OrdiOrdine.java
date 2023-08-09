@@ -9,13 +9,11 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ORDI_ORDINE")
 public class OrdiOrdine implements Serializable {
@@ -56,9 +54,96 @@ public class OrdiOrdine implements Serializable {
     private String ordiSysuser;
 
     @Column(name = "ORDI_SYSDATE")
-    private Instant ordiSysdate;
+    private LocalDate ordiSysdate;
 
     @Column(name = "ORDI_FLAG_ATTIVA")
     private Integer ordiFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public OffeOfferta getOrdiFkOffeoffertaid() {
+        return ordiFkOffeoffertaid;
+    }
+
+    public void setOrdiFkOffeoffertaid(OffeOfferta ordiFkOffeoffertaid) {
+        this.ordiFkOffeoffertaid = ordiFkOffeoffertaid;
+    }
+
+    public AnsoSocieta getOrdiFkAnsocommittente() {
+        return ordiFkAnsocommittente;
+    }
+
+    public void setOrdiFkAnsocommittente(AnsoSocieta ordiFkAnsocommittente) {
+        this.ordiFkAnsocommittente = ordiFkAnsocommittente;
+    }
+
+    public AndoDocumento getOrdiFkAndodocumentoordine() {
+        return ordiFkAndodocumentoordine;
+    }
+
+    public void setOrdiFkAndodocumentoordine(AndoDocumento ordiFkAndodocumentoordine) {
+        this.ordiFkAndodocumentoordine = ordiFkAndodocumentoordine;
+    }
+
+    public AnsoSocieta getOrdiFkAnsosocietagruppo() {
+        return ordiFkAnsosocietagruppo;
+    }
+
+    public void setOrdiFkAnsosocietagruppo(AnsoSocieta ordiFkAnsosocietagruppo) {
+        this.ordiFkAnsosocietagruppo = ordiFkAnsosocietagruppo;
+    }
+
+    public String getOrdiOrdinedesc() {
+        return ordiOrdinedesc;
+    }
+
+    public void setOrdiOrdinedesc(String ordiOrdinedesc) {
+        this.ordiOrdinedesc = ordiOrdinedesc;
+    }
+
+    public LocalDate getOrdiDataordine() {
+        return ordiDataordine;
+    }
+
+    public void setOrdiDataordine(LocalDate ordiDataordine) {
+        this.ordiDataordine = ordiDataordine;
+    }
+
+    public LocalDate getOrdiDataevasioneordine() {
+        return ordiDataevasioneordine;
+    }
+
+    public void setOrdiDataevasioneordine(LocalDate ordiDataevasioneordine) {
+        this.ordiDataevasioneordine = ordiDataevasioneordine;
+    }
+
+    public String getOrdiSysuser() {
+        return ordiSysuser;
+    }
+
+    public void setOrdiSysuser(String ordiSysuser) {
+        this.ordiSysuser = ordiSysuser;
+    }
+
+    public LocalDate getOrdiSysdate() {
+        return ordiSysdate;
+    }
+
+    public void setOrdiSysdate(LocalDate ordiSysdate) {
+        this.ordiSysdate = ordiSysdate;
+    }
+
+    public Integer getOrdiFlagAttiva() {
+        return ordiFlagAttiva;
+    }
+
+    public void setOrdiFlagAttiva(Integer ordiFlagAttiva) {
+        this.ordiFlagAttiva = ordiFlagAttiva;
+    }
 }

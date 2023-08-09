@@ -14,8 +14,6 @@ import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "SYRU_RUOLISISTEMA")
 public class SyruRuolisistema implements Serializable {
@@ -28,4 +26,19 @@ public class SyruRuolisistema implements Serializable {
     @Column(name = "SYRU_DESCRUOLOSYS", length = 100)
     private String syruDescruolosys;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getSyruDescruolosys() {
+        return syruDescruolosys;
+    }
+
+    public void setSyruDescruolosys(String syruDescruolosys) {
+        this.syruDescruolosys = syruDescruolosys;
+    }
 }

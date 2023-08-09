@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "NOTN_TIPONOTIFICA")
 public class NotnTiponotifica implements Serializable {
@@ -37,9 +35,48 @@ public class NotnTiponotifica implements Serializable {
     private String notnSysuser;
 
     @Column(name = "NOTN_SYSDATE")
-    private Instant notnSysdate;
+    private LocalDate notnSysdate;
 
     @Column(name = "NOTN_FLAG_ATTIVA")
     private Integer notnFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getNotnTnotdesc() {
+        return notnTnotdesc;
+    }
+
+    public void setNotnTnotdesc(String notnTnotdesc) {
+        this.notnTnotdesc = notnTnotdesc;
+    }
+
+    public String getNotnSysuser() {
+        return notnSysuser;
+    }
+
+    public void setNotnSysuser(String notnSysuser) {
+        this.notnSysuser = notnSysuser;
+    }
+
+    public LocalDate getNotnSysdate() {
+        return notnSysdate;
+    }
+
+    public void setNotnSysdate(LocalDate notnSysdate) {
+        this.notnSysdate = notnSysdate;
+    }
+
+    public Integer getNotnFlagAttiva() {
+        return notnFlagAttiva;
+    }
+
+    public void setNotnFlagAttiva(Integer notnFlagAttiva) {
+        this.notnFlagAttiva = notnFlagAttiva;
+    }
 }

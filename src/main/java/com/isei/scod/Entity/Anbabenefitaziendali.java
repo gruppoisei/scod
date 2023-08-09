@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANBABENEFITAZIENDALI")
 public class Anbabenefitaziendali implements Serializable {
@@ -37,9 +35,56 @@ public class Anbabenefitaziendali implements Serializable {
     private String anbaSysuser;
 
     @Column(name = "ANBA_SYSDATE")
-    private Instant anbaSysdate;
+    private LocalDate anbaSysdate;
 
     @Column(name = "ANBA_FLAG_ATTIVA")
     private Integer anbaFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AntbTipobenefitaziendali getAnbaFkAntbTipobenefitid() {
+        return anbaFkAntbTipobenefitid;
+    }
+
+    public void setAnbaFkAntbTipobenefitid(AntbTipobenefitaziendali anbaFkAntbTipobenefitid) {
+        this.anbaFkAntbTipobenefitid = anbaFkAntbTipobenefitid;
+    }
+
+    public AnpePersona getAnbaFkAnpePersonaid() {
+        return anbaFkAnpePersonaid;
+    }
+
+    public void setAnbaFkAnpePersonaid(AnpePersona anbaFkAnpePersonaid) {
+        this.anbaFkAnpePersonaid = anbaFkAnpePersonaid;
+    }
+
+    public String getAnbaSysuser() {
+        return anbaSysuser;
+    }
+
+    public void setAnbaSysuser(String anbaSysuser) {
+        this.anbaSysuser = anbaSysuser;
+    }
+
+    public LocalDate getAnbaSysdate() {
+        return anbaSysdate;
+    }
+
+    public void setAnbaSysdate(LocalDate anbaSysdate) {
+        this.anbaSysdate = anbaSysdate;
+    }
+
+    public Integer getAnbaFlagAttiva() {
+        return anbaFlagAttiva;
+    }
+
+    public void setAnbaFlagAttiva(Integer anbaFlagAttiva) {
+        this.anbaFlagAttiva = anbaFlagAttiva;
+    }
 }

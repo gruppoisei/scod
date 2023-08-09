@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "GEAG_AREA_GEOGRAFICA")
 public class GeagAreaGeografica implements Serializable {
@@ -32,7 +30,7 @@ public class GeagAreaGeografica implements Serializable {
     private String geagDeno;
 
     @Column(name = "GEAG_SYSDATE")
-    private Instant geagSysdate;
+    private LocalDate geagSysdate;
 
     @Size(max = 50)
     @NotNull
@@ -42,4 +40,43 @@ public class GeagAreaGeografica implements Serializable {
     @Column(name = "GEAG_FLAG_ATTIVA")
     private Integer geagFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getGeagDeno() {
+        return geagDeno;
+    }
+
+    public void setGeagDeno(String geagDeno) {
+        this.geagDeno = geagDeno;
+    }
+
+    public LocalDate getGeagSysdate() {
+        return geagSysdate;
+    }
+
+    public void setGeagSysdate(LocalDate geagSysdate) {
+        this.geagSysdate = geagSysdate;
+    }
+
+    public String getGeagSysuser() {
+        return geagSysuser;
+    }
+
+    public void setGeagSysuser(String geagSysuser) {
+        this.geagSysuser = geagSysuser;
+    }
+
+    public Integer getGeagFlagAttiva() {
+        return geagFlagAttiva;
+    }
+
+    public void setGeagFlagAttiva(Integer geagFlagAttiva) {
+        this.geagFlagAttiva = geagFlagAttiva;
+    }
 }

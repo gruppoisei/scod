@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANTS_TIPOSOCIETA")
 public class AntsTiposocieta implements Serializable {
@@ -37,9 +35,48 @@ public class AntsTiposocieta implements Serializable {
     private String antsSysuser;
 
     @Column(name = "ANTS_SYSDATE")
-    private Instant antsSysdate;
+    private LocalDate antsSysdate;
 
     @Column(name = "ANTS_FLAG_ATTIVA")
     private Integer antsFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAntsTiposocdesc() {
+        return antsTiposocdesc;
+    }
+
+    public void setAntsTiposocdesc(String antsTiposocdesc) {
+        this.antsTiposocdesc = antsTiposocdesc;
+    }
+
+    public String getAntsSysuser() {
+        return antsSysuser;
+    }
+
+    public void setAntsSysuser(String antsSysuser) {
+        this.antsSysuser = antsSysuser;
+    }
+
+    public LocalDate getAntsSysdate() {
+        return antsSysdate;
+    }
+
+    public void setAntsSysdate(LocalDate antsSysdate) {
+        this.antsSysdate = antsSysdate;
+    }
+
+    public Integer getAntsFlagAttiva() {
+        return antsFlagAttiva;
+    }
+
+    public void setAntsFlagAttiva(Integer antsFlagAttiva) {
+        this.antsFlagAttiva = antsFlagAttiva;
+    }
 }

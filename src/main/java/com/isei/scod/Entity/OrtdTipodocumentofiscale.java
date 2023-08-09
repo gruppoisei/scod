@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ORTD_TIPODOCUMENTOFISCALE")
 public class OrtdTipodocumentofiscale implements Serializable {
@@ -36,9 +34,48 @@ public class OrtdTipodocumentofiscale implements Serializable {
     private String ortdSysuser;
 
     @Column(name = "ORTD_SYSDATE")
-    private Instant ortdSysdate;
+    private LocalDate ortdSysdate;
 
     @Column(name = "ORTD_FLAG_ATTIVA")
     private Integer ortdFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getOrtdTipodesc() {
+        return ortdTipodesc;
+    }
+
+    public void setOrtdTipodesc(String ortdTipodesc) {
+        this.ortdTipodesc = ortdTipodesc;
+    }
+
+    public String getOrtdSysuser() {
+        return ortdSysuser;
+    }
+
+    public void setOrtdSysuser(String ortdSysuser) {
+        this.ortdSysuser = ortdSysuser;
+    }
+
+    public LocalDate getOrtdSysdate() {
+        return ortdSysdate;
+    }
+
+    public void setOrtdSysdate(LocalDate ortdSysdate) {
+        this.ortdSysdate = ortdSysdate;
+    }
+
+    public Integer getOrtdFlagAttiva() {
+        return ortdFlagAttiva;
+    }
+
+    public void setOrtdFlagAttiva(Integer ortdFlagAttiva) {
+        this.ortdFlagAttiva = ortdFlagAttiva;
+    }
 }

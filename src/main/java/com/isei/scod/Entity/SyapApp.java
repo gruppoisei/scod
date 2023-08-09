@@ -14,8 +14,6 @@ import java.io.Serializable;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "SYAP_APP")
 public class SyapApp implements Serializable {
@@ -28,4 +26,19 @@ public class SyapApp implements Serializable {
     @Column(name = "SYAP_DESCAPP", length = 100)
     private String syapDescapp;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getSyapDescapp() {
+        return syapDescapp;
+    }
+
+    public void setSyapDescapp(String syapDescapp) {
+        this.syapDescapp = syapDescapp;
+    }
 }

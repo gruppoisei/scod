@@ -13,12 +13,10 @@ import lombok.Setter;
 import org.hibernate.annotations.Nationalized;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANTB_TIPOBENEFITAZIENDALI")
 public class AntbTipobenefitaziendali implements Serializable {
@@ -38,9 +36,48 @@ public class AntbTipobenefitaziendali implements Serializable {
     private String antbSysuser;
 
     @Column(name = "ANTB_SYSDATE")
-    private Instant antbSysdate;
+    private LocalDate antbSysdate;
 
     @Column(name = "ANTB_FLAG_ATTIVA")
     private Integer antbFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAntbBenefitaziendalidesc() {
+        return antbBenefitaziendalidesc;
+    }
+
+    public void setAntbBenefitaziendalidesc(String antbBenefitaziendalidesc) {
+        this.antbBenefitaziendalidesc = antbBenefitaziendalidesc;
+    }
+
+    public String getAntbSysuser() {
+        return antbSysuser;
+    }
+
+    public void setAntbSysuser(String antbSysuser) {
+        this.antbSysuser = antbSysuser;
+    }
+
+    public LocalDate getAntbSysdate() {
+        return antbSysdate;
+    }
+
+    public void setAntbSysdate(LocalDate antbSysdate) {
+        this.antbSysdate = antbSysdate;
+    }
+
+    public Integer getAntbFlagAttiva() {
+        return antbFlagAttiva;
+    }
+
+    public void setAntbFlagAttiva(Integer antbFlagAttiva) {
+        this.antbFlagAttiva = antbFlagAttiva;
+    }
 }

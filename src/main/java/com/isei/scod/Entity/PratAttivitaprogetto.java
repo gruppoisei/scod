@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "PRAT_ATTIVITAPROGETTO")
 public class PratAttivitaprogetto implements Serializable {
@@ -32,10 +30,10 @@ public class PratAttivitaprogetto implements Serializable {
     private CoapTipoattivitaprogetto pratFkCoapattivitaprogettoid;
 
     @Column(name = "PRAT_DATAINIZIO")
-    private Instant pratDatainizio;
+    private LocalDate pratDatainizio;
 
     @Column(name = "PRAT_DATAFINE")
-    private Instant pratDatafine;
+    private LocalDate pratDatafine;
 
     @Size(max = 100)
     @Column(name = "PRAT_NOTE", length = 100)
@@ -47,9 +45,80 @@ public class PratAttivitaprogetto implements Serializable {
     private String pratSysuser;
 
     @Column(name = "PRAT_SYSDATE")
-    private Instant pratSysdate;
+    private LocalDate pratSysdate;
 
     @Column(name = "PRAT_FLAG_ATTIVA")
     private Integer pratFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public PrprProgetto getPratFkPrprprogettoid() {
+        return pratFkPrprprogettoid;
+    }
+
+    public void setPratFkPrprprogettoid(PrprProgetto pratFkPrprprogettoid) {
+        this.pratFkPrprprogettoid = pratFkPrprprogettoid;
+    }
+
+    public CoapTipoattivitaprogetto getPratFkCoapattivitaprogettoid() {
+        return pratFkCoapattivitaprogettoid;
+    }
+
+    public void setPratFkCoapattivitaprogettoid(CoapTipoattivitaprogetto pratFkCoapattivitaprogettoid) {
+        this.pratFkCoapattivitaprogettoid = pratFkCoapattivitaprogettoid;
+    }
+
+    public LocalDate getPratDatainizio() {
+        return pratDatainizio;
+    }
+
+    public void setPratDatainizio(LocalDate pratDatainizio) {
+        this.pratDatainizio = pratDatainizio;
+    }
+
+    public LocalDate getPratDatafine() {
+        return pratDatafine;
+    }
+
+    public void setPratDatafine(LocalDate pratDatafine) {
+        this.pratDatafine = pratDatafine;
+    }
+
+    public String getPratNote() {
+        return pratNote;
+    }
+
+    public void setPratNote(String pratNote) {
+        this.pratNote = pratNote;
+    }
+
+    public String getPratSysuser() {
+        return pratSysuser;
+    }
+
+    public void setPratSysuser(String pratSysuser) {
+        this.pratSysuser = pratSysuser;
+    }
+
+    public LocalDate getPratSysdate() {
+        return pratSysdate;
+    }
+
+    public void setPratSysdate(LocalDate pratSysdate) {
+        this.pratSysdate = pratSysdate;
+    }
+
+    public Integer getPratFlagAttiva() {
+        return pratFlagAttiva;
+    }
+
+    public void setPratFlagAttiva(Integer pratFlagAttiva) {
+        this.pratFlagAttiva = pratFlagAttiva;
+    }
 }

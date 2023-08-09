@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANST_TITOLO_STUDIO")
 public class AnstTitoloStudio implements Serializable {
@@ -36,9 +34,48 @@ public class AnstTitoloStudio implements Serializable {
     private String anstSysuser;
 
     @Column(name = "ANST_SYSDATE")
-    private Instant anstSysdate;
+    private LocalDate anstSysdate;
 
     @Column(name = "ANST_FLAG_ATTIVA")
     private Integer anstFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAnstTitolostudiodesc() {
+        return anstTitolostudiodesc;
+    }
+
+    public void setAnstTitolostudiodesc(String anstTitolostudiodesc) {
+        this.anstTitolostudiodesc = anstTitolostudiodesc;
+    }
+
+    public String getAnstSysuser() {
+        return anstSysuser;
+    }
+
+    public void setAnstSysuser(String anstSysuser) {
+        this.anstSysuser = anstSysuser;
+    }
+
+    public LocalDate getAnstSysdate() {
+        return anstSysdate;
+    }
+
+    public void setAnstSysdate(LocalDate anstSysdate) {
+        this.anstSysdate = anstSysdate;
+    }
+
+    public Integer getAnstFlagAttiva() {
+        return anstFlagAttiva;
+    }
+
+    public void setAnstFlagAttiva(Integer anstFlagAttiva) {
+        this.anstFlagAttiva = anstFlagAttiva;
+    }
 }

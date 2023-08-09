@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ANRU_RUOLO")
 public class AnruRuolo implements Serializable {
@@ -37,9 +35,48 @@ public class AnruRuolo implements Serializable {
     private String anruSysuser;
 
     @Column(name = "ANRU_SYSDATE")
-    private Instant anruSysdate;
+    private LocalDate anruSysdate;
 
     @Column(name = "ANRU_FLAG_ATTIVA")
     private Integer anruFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getAnruRuolodesc() {
+        return anruRuolodesc;
+    }
+
+    public void setAnruRuolodesc(String anruRuolodesc) {
+        this.anruRuolodesc = anruRuolodesc;
+    }
+
+    public String getAnruSysuser() {
+        return anruSysuser;
+    }
+
+    public void setAnruSysuser(String anruSysuser) {
+        this.anruSysuser = anruSysuser;
+    }
+
+    public LocalDate getAnruSysdate() {
+        return anruSysdate;
+    }
+
+    public void setAnruSysdate(LocalDate anruSysdate) {
+        this.anruSysdate = anruSysdate;
+    }
+
+    public Integer getAnruFlagAttiva() {
+        return anruFlagAttiva;
+    }
+
+    public void setAnruFlagAttiva(Integer anruFlagAttiva) {
+        this.anruFlagAttiva = anruFlagAttiva;
+    }
 }

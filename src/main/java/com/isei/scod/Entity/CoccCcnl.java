@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "COCC_CCNL")
 public class CoccCcnl implements Serializable {
@@ -36,9 +34,48 @@ public class CoccCcnl implements Serializable {
     private String coccSysuser;
 
     @Column(name = "COCC_SYSDATE")
-    private Instant coccSysdate;
+    private LocalDate coccSysdate;
 
     @Column(name = "COCC_FLAG_ATTIVA")
     private Integer coccFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getCoccDesc() {
+        return coccDesc;
+    }
+
+    public void setCoccDesc(String coccDesc) {
+        this.coccDesc = coccDesc;
+    }
+
+    public String getCoccSysuser() {
+        return coccSysuser;
+    }
+
+    public void setCoccSysuser(String coccSysuser) {
+        this.coccSysuser = coccSysuser;
+    }
+
+    public LocalDate getCoccSysdate() {
+        return coccSysdate;
+    }
+
+    public void setCoccSysdate(LocalDate coccSysdate) {
+        this.coccSysdate = coccSysdate;
+    }
+
+    public Integer getCoccFlagAttiva() {
+        return coccFlagAttiva;
+    }
+
+    public void setCoccFlagAttiva(Integer coccFlagAttiva) {
+        this.coccFlagAttiva = coccFlagAttiva;
+    }
 }

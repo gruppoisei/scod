@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "PRRE_REFERENTEPROGETTO")
 public class PrreReferenteprogetto implements Serializable {
@@ -41,9 +39,64 @@ public class PrreReferenteprogetto implements Serializable {
     private String prreSysuser;
 
     @Column(name = "PRRE_SYSDATE")
-    private Instant prreSysdate;
+    private LocalDate prreSysdate;
 
     @Column(name = "PRRE_FLAG_ATTIVA")
     private Integer prreFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AnpePersona getPrreFkAnpepersonaid() {
+        return prreFkAnpepersonaid;
+    }
+
+    public void setPrreFkAnpepersonaid(AnpePersona prreFkAnpepersonaid) {
+        this.prreFkAnpepersonaid = prreFkAnpepersonaid;
+    }
+
+    public PrrpRuoloprogetto getPrreFkPrrpruoloprogettoid() {
+        return prreFkPrrpruoloprogettoid;
+    }
+
+    public void setPrreFkPrrpruoloprogettoid(PrrpRuoloprogetto prreFkPrrpruoloprogettoid) {
+        this.prreFkPrrpruoloprogettoid = prreFkPrrpruoloprogettoid;
+    }
+
+    public PrprProgetto getPrreFkPrprprogettoid() {
+        return prreFkPrprprogettoid;
+    }
+
+    public void setPrreFkPrprprogettoid(PrprProgetto prreFkPrprprogettoid) {
+        this.prreFkPrprprogettoid = prreFkPrprprogettoid;
+    }
+
+    public String getPrreSysuser() {
+        return prreSysuser;
+    }
+
+    public void setPrreSysuser(String prreSysuser) {
+        this.prreSysuser = prreSysuser;
+    }
+
+    public LocalDate getPrreSysdate() {
+        return prreSysdate;
+    }
+
+    public void setPrreSysdate(LocalDate prreSysdate) {
+        this.prreSysdate = prreSysdate;
+    }
+
+    public Integer getPrreFlagAttiva() {
+        return prreFlagAttiva;
+    }
+
+    public void setPrreFlagAttiva(Integer prreFlagAttiva) {
+        this.prreFlagAttiva = prreFlagAttiva;
+    }
 }

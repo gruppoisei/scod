@@ -12,12 +12,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "ORSP_TIPOSERVIZIOPRODOTTO")
 public class OrspTiposervizioprodotto implements Serializable {
@@ -36,9 +34,48 @@ public class OrspTiposervizioprodotto implements Serializable {
     private String orspSysuser;
 
     @Column(name = "ORSP_SYSDATE")
-    private Instant orspSysdate;
+    private LocalDate orspSysdate;
 
     @Column(name = "ORSP_FLAG_ATTIVA")
     private Integer orspFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public String getOrspProdservnome() {
+        return orspProdservnome;
+    }
+
+    public void setOrspProdservnome(String orspProdservnome) {
+        this.orspProdservnome = orspProdservnome;
+    }
+
+    public String getOrspSysuser() {
+        return orspSysuser;
+    }
+
+    public void setOrspSysuser(String orspSysuser) {
+        this.orspSysuser = orspSysuser;
+    }
+
+    public LocalDate getOrspSysdate() {
+        return orspSysdate;
+    }
+
+    public void setOrspSysdate(LocalDate orspSysdate) {
+        this.orspSysdate = orspSysdate;
+    }
+
+    public Integer getOrspFlagAttiva() {
+        return orspFlagAttiva;
+    }
+
+    public void setOrspFlagAttiva(Integer orspFlagAttiva) {
+        this.orspFlagAttiva = orspFlagAttiva;
+    }
 }

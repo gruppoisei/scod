@@ -12,12 +12,10 @@ import lombok.Setter;
 import jakarta.persistence.Id;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "PRRP_RUOLOPROGETTO")
 public class PrrpRuoloprogetto implements Serializable {
@@ -38,9 +36,48 @@ public class PrrpRuoloprogetto implements Serializable {
     private String prrpSysuser;
 
     @Column(name = "PRRP_SYSDATE")
-    private Instant prrpSysdate;
+    private LocalDate prrpSysdate;
 
     @Column(name = "PRRP_FLAG_ATTIVA")
     private Integer prrpFlagAttiva;
 
+    public Integer getPrrpRuoloprogettoid() {
+        return prrpRuoloprogettoid;
+    }
+
+    public void setPrrpRuoloprogettoid(Integer prrpRuoloprogettoid) {
+        this.prrpRuoloprogettoid = prrpRuoloprogettoid;
+    }
+
+    public String getPrrpRuoloprogettodesc() {
+        return prrpRuoloprogettodesc;
+    }
+
+    public void setPrrpRuoloprogettodesc(String prrpRuoloprogettodesc) {
+        this.prrpRuoloprogettodesc = prrpRuoloprogettodesc;
+    }
+
+    public String getPrrpSysuser() {
+        return prrpSysuser;
+    }
+
+    public void setPrrpSysuser(String prrpSysuser) {
+        this.prrpSysuser = prrpSysuser;
+    }
+
+    public LocalDate getPrrpSysdate() {
+        return prrpSysdate;
+    }
+
+    public void setPrrpSysdate(LocalDate prrpSysdate) {
+        this.prrpSysdate = prrpSysdate;
+    }
+
+    public Integer getPrrpFlagAttiva() {
+        return prrpFlagAttiva;
+    }
+
+    public void setPrrpFlagAttiva(Integer prrpFlagAttiva) {
+        this.prrpFlagAttiva = prrpFlagAttiva;
+    }
 }

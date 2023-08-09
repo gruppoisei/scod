@@ -9,12 +9,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.io.Serializable;
-import java.time.Instant;
+import java.time.LocalDate;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Getter
-@Setter
 @Entity
 @Table(name = "TRRI_RICHIESTA")
 public class TrriRichiesta implements Serializable {
@@ -36,10 +34,10 @@ public class TrriRichiesta implements Serializable {
     private String trriNote;
 
     @Column(name = "TRRI_DATAINIZIO")
-    private Instant trriDatainizio;
+    private LocalDate trriDatainizio;
 
     @Column(name = "TRRI_DATAFINE")
-    private Instant trriDatafine;
+    private LocalDate trriDatafine;
 
     @Size(max = 50)
     @NotNull
@@ -47,9 +45,80 @@ public class TrriRichiesta implements Serializable {
     private String trriSysuser;
 
     @Column(name = "TRRI_SYSDATE")
-    private Instant trriSysdate;
+    private LocalDate trriSysdate;
 
     @Column(name = "TRRI_FLAG_ATTIVA")
     private Integer trriFlagAttiva;
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public AnpePersona getTrriFkAnpepersonaid() {
+        return trriFkAnpepersonaid;
+    }
+
+    public void setTrriFkAnpepersonaid(AnpePersona trriFkAnpepersonaid) {
+        this.trriFkAnpepersonaid = trriFkAnpepersonaid;
+    }
+
+    public TrtrTiporichiesta getTrriFkTrtrtiporichiestaid() {
+        return trriFkTrtrtiporichiestaid;
+    }
+
+    public void setTrriFkTrtrtiporichiestaid(TrtrTiporichiesta trriFkTrtrtiporichiestaid) {
+        this.trriFkTrtrtiporichiestaid = trriFkTrtrtiporichiestaid;
+    }
+
+    public String getTrriNote() {
+        return trriNote;
+    }
+
+    public void setTrriNote(String trriNote) {
+        this.trriNote = trriNote;
+    }
+
+    public LocalDate getTrriDatainizio() {
+        return trriDatainizio;
+    }
+
+    public void setTrriDatainizio(LocalDate trriDatainizio) {
+        this.trriDatainizio = trriDatainizio;
+    }
+
+    public LocalDate getTrriDatafine() {
+        return trriDatafine;
+    }
+
+    public void setTrriDatafine(LocalDate trriDatafine) {
+        this.trriDatafine = trriDatafine;
+    }
+
+    public String getTrriSysuser() {
+        return trriSysuser;
+    }
+
+    public void setTrriSysuser(String trriSysuser) {
+        this.trriSysuser = trriSysuser;
+    }
+
+    public LocalDate getTrriSysdate() {
+        return trriSysdate;
+    }
+
+    public void setTrriSysdate(LocalDate trriSysdate) {
+        this.trriSysdate = trriSysdate;
+    }
+
+    public Integer getTrriFlagAttiva() {
+        return trriFlagAttiva;
+    }
+
+    public void setTrriFlagAttiva(Integer trriFlagAttiva) {
+        this.trriFlagAttiva = trriFlagAttiva;
+    }
 }
