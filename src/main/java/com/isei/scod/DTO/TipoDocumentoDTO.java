@@ -1,7 +1,7 @@
 package com.isei.scod.DTO;
 
 
-import jakarta.persistence.Column;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

@@ -1,12 +1,10 @@
 package com.isei.scod.Service;
 
 import com.isei.scod.DTO.AndoDocumentoDTO;
-import com.isei.scod.DTO.TipoDocumentoDTO;
 import com.isei.scod.Entity.AltaTipodocumento;
 import com.isei.scod.Entity.AndoDocumento;
 import com.isei.scod.Exception.NotFoundException;
 import com.isei.scod.Mapper.AndoDocumentoMapper;
-import com.isei.scod.Mapper.TipoDocumentoMapper;
 import com.isei.scod.Repository.AndoDocumentoRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

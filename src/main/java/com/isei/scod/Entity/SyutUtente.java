@@ -24,8 +24,8 @@ public class SyutUtente implements Serializable {
     private Integer anutFkPersPersonaid;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ANUT_FK_ANSA_STAT_AB_ID")
-    private AnsaStatoAbilitazione anutFkAnsaStatAb;
+    @JoinColumn(name = "ANUT_FK_SYSA_STAT_AB_ID")
+    private SysaStatoAbilitazione anutFkSysaStatAb;
 
     @Size(max = 100)
     @NotNull
@@ -73,12 +73,12 @@ public class SyutUtente implements Serializable {
         this.anutFkPersPersonaid = anutFkPersPersonaid;
     }
 
-    public AnsaStatoAbilitazione getAnutFkAnsaStatAb() {
-        return anutFkAnsaStatAb;
+    public SysaStatoAbilitazione getAnutFkSysaStatAb() {
+        return anutFkSysaStatAb;
     }
 
-    public void setAnutFkAnsaStatAb(AnsaStatoAbilitazione anutFkAnsaStatAb) {
-        this.anutFkAnsaStatAb = anutFkAnsaStatAb;
+    public void setAnutFkSysaStatAb(SysaStatoAbilitazione anutFkSysaStatAb) {
+        this.anutFkSysaStatAb = anutFkSysaStatAb;
     }
 
     public String getAnutUserName() {

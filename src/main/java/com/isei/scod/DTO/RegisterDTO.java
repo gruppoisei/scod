@@ -1,6 +1,6 @@
 package com.isei.scod.DTO;
 
-import com.isei.scod.Entity.AnsaStatoAbilitazione;
+import com.isei.scod.Entity.SysaStatoAbilitazione;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -14,7 +14,7 @@ public class RegisterDTO {
 
     private Integer anutFkPersPersonaid;
 
-    private AnsaStatoAbilitazione anutFkAnsaStatAb;
+    private SysaStatoAbilitazione anutFkSysaStatAb;
 
     @Size(max = 100)
     @NotNull
@@ -42,12 +42,12 @@ public class RegisterDTO {
         this.anutFkPersPersonaid = anutFkPersPersonaid;
     }
 
-    public AnsaStatoAbilitazione getAnutFkAnsaStatAb() {
-        return anutFkAnsaStatAb;
+    public SysaStatoAbilitazione getAnutFkSysaStatAb() {
+        return anutFkSysaStatAb;
     }
 
-    public void setAnutFkAnsaStatAb(AnsaStatoAbilitazione anutFkAnsaStatAb) {
-        this.anutFkAnsaStatAb = anutFkAnsaStatAb;
+    public void setAnutFkSysaStatAb(SysaStatoAbilitazione anutFkSysaStatAb) {
+        this.anutFkSysaStatAb = anutFkSysaStatAb;
     }
 
     public String getAnutUserName() {

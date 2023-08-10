@@ -18,6 +18,7 @@ import java.time.LocalDate;
 public class AnsoSocieta implements Serializable {
     private static final long serialVersionUID = 6077993458570447753L;
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ANSO_SOCIETAID", nullable = false)
     private Integer id;
 
