@@ -1,14 +1,15 @@
 package com.isei.scod.Service;
 
+import com.isei.scod.ConfigSecurity.PasswordEncoder;
 import com.isei.scod.DTO.RegisterDTO;
 import com.isei.scod.Entity.SyutUtente;
 import com.isei.scod.Mapper.UtenteMapper;
 import com.isei.scod.Repository.UtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.util.Optional;
 
 @Service
 public class UtenteService {
@@ -19,23 +20,22 @@ public class UtenteService {
     @Autowired
     UtenteMapper utenteMapper;
 
-
     @Autowired
-    BCryptPasswordEncoder passwordEncoder;
-
+    private PasswordEncoder passwordEncoder;
 
 
     public Boolean registerUser(RegisterDTO registerDTO) {
         SyutUtente newUser = utenteMapper.fromRegisterDTOToUtente(registerDTO);
-        newUser.setAnutDataAbilitazione(LocalDate.now());
-        newUser.setAnutPasswordHash(passwordEncoder.encode(newUser.getAnutPasswordHash()));
+        newUser.setSyutDataAbilitazione(LocalDate.now());
+        newUser.setSyutPasswordHash(passwordEncoder.getPasswordEncoder().encode(newUser.getSyutPasswordHash()));
         utenteRepository.save(newUser);
         return true;
     }
 
-    public SyutUtente getUser(String user) {
+    public Optional<SyutUtente> getUser(String user) {
 
-        return utenteRepository.findByAnutUserName(user).get();
+        return utenteRepository.findBySyutUserName(user);
 
     }
+
 }

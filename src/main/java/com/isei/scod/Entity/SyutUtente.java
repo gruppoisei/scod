@@ -5,57 +5,60 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.Collection;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
 @Table(name = "SYUT_UTENTE")
-public class SyutUtente implements Serializable {
+public class SyutUtente implements Serializable, UserDetails {
     private static final long serialVersionUID = 8622724166193418404L;
     @Id
     @Column(name = "SYUT_IDUTENTE", nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(name = "ANUT_FK_PERS_PERSONAID")
-    private Integer anutFkPersPersonaid;
+    @Column(name = "SYUT_FK_PERS_PERSONAID")
+    private Integer syutFkPersPersonaid;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ANUT_FK_SYSA_STAT_AB_ID")
-    private SysaStatoAbilitazione anutFkSysaStatAb;
+    @JoinColumn(name = "SYUT_FK_SYSA_STAT_AB_ID")
+    private SysaStatoAbilitazione syutFkAnsaStatAb;
 
     @Size(max = 100)
     @NotNull
-    @Column(name = "ANUT_USER_NAME", nullable = false, length = 100)
-    private String anutUserName;
+    @Column(name = "SYUT_USER_NAME", nullable = false, length = 100)
+    private String syutUserName;
 
-    @Column(name = "ANUT_DATA_ABILITAZIONE")
-    private LocalDate anutDataAbilitazione;
+    @Column(name = "SYUT_DATA_ABILITAZIONE")
+    private LocalDate syutDataAbilitazione;
 
-    @Column(name = "ANUT_DATA_DISABILITAZIONE")
-    private LocalDate anutDataDisabilitazione;
+    @Column(name = "SYUT_DATA_DISABILITAZIONE")
+    private LocalDate syutDataDisabilitazione;
 
     @Size(max = 256)
     @NotNull
-    @Column(name = "ANUT_PASSWORD_HASH", nullable = false, length = 256)
-    private String anutPasswordHash;
+    @Column(name = "SYUT_PASSWORD_HASH", nullable = false, length = 256)
+    private String syutPasswordHash;
 
-    @Column(name = "ANUT_FLAG_RESET_PASSWORD")
-    private Integer anutFlagResetPassword;
+    @Column(name = "SYUT_FLAG_RESET_PASSWORD")
+    private Integer syutFlagResetPassword;
 
     @Size(max = 50)
     @NotNull
-    @Column(name = "ANUT_SYSUSER", nullable = false, length = 50)
-    private String anutSysuser;
+    @Column(name = "SYUT_SYSUSER", nullable = false, length = 50)
+    private String syutSysuser;
 
-    @Column(name = "ANUT_SYSDATE")
-    private LocalDate anutSysdate;
+    @Column(name = "SYUT_SYSDATE")
+    private LocalDate syutSysdate;
 
-    @Column(name = "ANUT_FLAG_ATTIVA")
-    private Integer anutFlagAttiva;
+    @Column(name = "SYUT_FLAG_ATTIVA")
+    private Integer syutFlagAttiva;
 
     public Integer getId() {
         return id;
@@ -65,83 +68,118 @@ public class SyutUtente implements Serializable {
         this.id = id;
     }
 
-    public Integer getAnutFkPersPersonaid() {
-        return anutFkPersPersonaid;
+    public Integer getSyutFkPersPersonaid() {
+        return syutFkPersPersonaid;
     }
 
-    public void setAnutFkPersPersonaid(Integer anutFkPersPersonaid) {
-        this.anutFkPersPersonaid = anutFkPersPersonaid;
+    public void setSyutFkPersPersonaid(Integer syutFkPersPersonaid) {
+        this.syutFkPersPersonaid = syutFkPersPersonaid;
     }
 
-    public SysaStatoAbilitazione getAnutFkSysaStatAb() {
-        return anutFkSysaStatAb;
+    public SysaStatoAbilitazione getSyutFkAnsaStatAb() {
+        return syutFkAnsaStatAb;
     }
 
-    public void setAnutFkSysaStatAb(SysaStatoAbilitazione anutFkSysaStatAb) {
-        this.anutFkSysaStatAb = anutFkSysaStatAb;
+    public void setSyutFkAnsaStatAb(SysaStatoAbilitazione syutFkAnsaStatAb) {
+        this.syutFkAnsaStatAb = syutFkAnsaStatAb;
     }
 
-    public String getAnutUserName() {
-        return anutUserName;
+    public String getSyutUserName() {
+        return syutUserName;
     }
 
-    public void setAnutUserName(String anutUserName) {
-        this.anutUserName = anutUserName;
+    public void setSyutUserName(String syutUserName) {
+        this.syutUserName = syutUserName;
     }
 
-    public LocalDate getAnutDataAbilitazione() {
-        return anutDataAbilitazione;
+    public LocalDate getSyutDataAbilitazione() {
+        return syutDataAbilitazione;
     }
 
-    public void setAnutDataAbilitazione(LocalDate anutDataAbilitazione) {
-        this.anutDataAbilitazione = anutDataAbilitazione;
+    public void setSyutDataAbilitazione(LocalDate syutDataAbilitazione) {
+        this.syutDataAbilitazione = syutDataAbilitazione;
     }
 
-    public LocalDate getAnutDataDisabilitazione() {
-        return anutDataDisabilitazione;
+    public LocalDate getSyutDataDisabilitazione() {
+        return syutDataDisabilitazione;
     }
 
-    public void setAnutDataDisabilitazione(LocalDate anutDataDisabilitazione) {
-        this.anutDataDisabilitazione = anutDataDisabilitazione;
+    public void setSyutDataDisabilitazione(LocalDate syutDataDisabilitazione) {
+        this.syutDataDisabilitazione = syutDataDisabilitazione;
     }
 
-    public String getAnutPasswordHash() {
-        return anutPasswordHash;
+    public String getSyutPasswordHash() {
+        return syutPasswordHash;
     }
 
-    public void setAnutPasswordHash(String anutPasswordHash) {
-        this.anutPasswordHash = anutPasswordHash;
+    public void setSyutPasswordHash(String syutPasswordHash) {
+        this.syutPasswordHash = syutPasswordHash;
     }
 
-    public Integer getAnutFlagResetPassword() {
-        return anutFlagResetPassword;
+    public Integer getSyutFlagResetPassword() {
+        return syutFlagResetPassword;
     }
 
-    public void setAnutFlagResetPassword(Integer anutFlagResetPassword) {
-        this.anutFlagResetPassword = anutFlagResetPassword;
+    public void setSyutFlagResetPassword(Integer syutFlagResetPassword) {
+        this.syutFlagResetPassword = syutFlagResetPassword;
     }
 
-    public String getAnutSysuser() {
-        return anutSysuser;
+    public String getSyutSysuser() {
+        return syutSysuser;
     }
 
-    public void setAnutSysuser(String anutSysuser) {
-        this.anutSysuser = anutSysuser;
+    public void setSyutSysuser(String syutSysuser) {
+        this.syutSysuser = syutSysuser;
     }
 
-    public LocalDate getAnutSysdate() {
-        return anutSysdate;
+    public LocalDate getSyutSysdate() {
+        return syutSysdate;
     }
 
-    public void setAnutSysdate(LocalDate anutSysdate) {
-        this.anutSysdate = anutSysdate;
+    public void setSyutSysdate(LocalDate syutSysdate) {
+        this.syutSysdate = syutSysdate;
     }
 
-    public Integer getAnutFlagAttiva() {
-        return anutFlagAttiva;
+    public Integer getSyutFlagAttiva() {
+        return syutFlagAttiva;
     }
 
-    public void setAnutFlagAttiva(Integer anutFlagAttiva) {
-        this.anutFlagAttiva = anutFlagAttiva;
+    public void setSyutFlagAttiva(Integer syutFlagAttiva) {
+        this.syutFlagAttiva = syutFlagAttiva;
+    }
+
+    @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return null;
+    }
+
+    @Override
+    public String getPassword() {
+        return syutPasswordHash;
+    }
+
+    @Override
+    public String getUsername() {
+        return getSyutUserName();
+    }
+
+    @Override
+    public boolean isAccountNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isAccountNonLocked() {
+        return true;
+    }
+
+    @Override
+    public boolean isCredentialsNonExpired() {
+        return true;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }

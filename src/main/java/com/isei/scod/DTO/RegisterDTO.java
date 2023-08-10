@@ -12,89 +12,89 @@ import java.time.LocalDate;
 @AllArgsConstructor
 public class RegisterDTO {
 
-    private Integer anutFkPersPersonaid;
+    private Integer syutFkPersPersonaid;
 
-    private SysaStatoAbilitazione anutFkSysaStatAb;
+    private SysaStatoAbilitazione syutFkSysaStatAb;
 
     @Size(max = 100)
     @NotNull
-    private String anutUserName;
+    private String syutUserName;
 
     @Size(max = 256)
     @NotNull
-    private String anutPasswordHash;
+    private String syutPasswordHash;
 
-    private Integer anutFlagResetPassword;
+    private Integer syutFlagResetPassword;
 
     @Size(max = 50)
     @NotNull
-    private String anutSysuser;
+    private String syutSysuser;
 
-    private LocalDate anutSysdate;
+    private LocalDate syutSysdate;
 
-    private Integer anutFlagAttiva;
+    private Integer syutFlagAttiva;
 
-    public Integer getAnutFkPersPersonaid() {
-        return anutFkPersPersonaid;
+    public Integer getSyutFkPersPersonaid() {
+        return syutFkPersPersonaid;
     }
 
-    public void setAnutFkPersPersonaid(Integer anutFkPersPersonaid) {
-        this.anutFkPersPersonaid = anutFkPersPersonaid;
+    public void setSyutFkPersPersonaid(Integer syutFkPersPersonaid) {
+        this.syutFkPersPersonaid = syutFkPersPersonaid;
     }
 
-    public SysaStatoAbilitazione getAnutFkSysaStatAb() {
-        return anutFkSysaStatAb;
+    public SysaStatoAbilitazione getSyutFkSysaStatAb() {
+        return syutFkSysaStatAb;
     }
 
-    public void setAnutFkSysaStatAb(SysaStatoAbilitazione anutFkSysaStatAb) {
-        this.anutFkSysaStatAb = anutFkSysaStatAb;
+    public void setSyutFkSysaStatAb(SysaStatoAbilitazione syutFkSysaStatAb) {
+        this.syutFkSysaStatAb = syutFkSysaStatAb;
     }
 
-    public String getAnutUserName() {
-        return anutUserName;
+    public String getSyutUserName() {
+        return syutUserName;
     }
 
-    public void setAnutUserName(String anutUserName) {
-        this.anutUserName = anutUserName;
+    public void setSyutUserName(String syutUserName) {
+        this.syutUserName = syutUserName;
     }
 
-    public String getAnutPasswordHash() {
-        return anutPasswordHash;
+    public String getSyutPasswordHash() {
+        return syutPasswordHash;
     }
 
-    public void setAnutPasswordHash(String anutPasswordHash) {
-        this.anutPasswordHash = anutPasswordHash;
+    public void setSyutPasswordHash(String syutPasswordHash) {
+        this.syutPasswordHash = syutPasswordHash;
     }
 
-    public Integer getAnutFlagResetPassword() {
-        return anutFlagResetPassword;
+    public Integer getSyutFlagResetPassword() {
+        return syutFlagResetPassword;
     }
 
-    public void setAnutFlagResetPassword(Integer anutFlagResetPassword) {
-        this.anutFlagResetPassword = anutFlagResetPassword;
+    public void setSyutFlagResetPassword(Integer syutFlagResetPassword) {
+        this.syutFlagResetPassword = syutFlagResetPassword;
     }
 
-    public String getAnutSysuser() {
-        return anutSysuser;
+    public String getSyutSysuser() {
+        return syutSysuser;
     }
 
-    public void setAnutSysuser(String anutSysuser) {
-        this.anutSysuser = anutSysuser;
+    public void setSyutSysuser(String syutSysuser) {
+        this.syutSysuser = syutSysuser;
     }
 
-    public LocalDate getAnutSysdate() {
-        return anutSysdate;
+    public LocalDate getSyutSysdate() {
+        return syutSysdate;
     }
 
-    public void setAnutSysdate(LocalDate anutSysdate) {
-        this.anutSysdate = anutSysdate;
+    public void setSyutSysdate(LocalDate syutSysdate) {
+        this.syutSysdate = syutSysdate;
     }
 
-    public Integer getAnutFlagAttiva() {
-        return anutFlagAttiva;
+    public Integer getSyutFlagAttiva() {
+        return syutFlagAttiva;
     }
 
-    public void setAnutFlagAttiva(Integer anutFlagAttiva) {
-        this.anutFlagAttiva = anutFlagAttiva;
+    public void setSyutFlagAttiva(Integer syutFlagAttiva) {
+        this.syutFlagAttiva = syutFlagAttiva;
     }
 }
