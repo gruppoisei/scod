@@ -27,7 +27,7 @@ public class SyutUtente implements Serializable, UserDetails {
     private Integer syutFkPersPersonaid;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "SYUT_FK_SYSA_STAT_AB_ID")
+    @JoinColumn(name = "SYUT_FK_ANSA_STAT_AB_ID")
     private SysaStatoAbilitazione syutFkAnsaStatAb;
 
     @Size(max = 100)
