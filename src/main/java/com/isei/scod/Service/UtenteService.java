@@ -4,7 +4,7 @@ import com.isei.scod.ConfigSecurity.PasswordEncoder;
 import com.isei.scod.DTO.RegisterDTO;
 import com.isei.scod.Entity.SyutUtente;
 import com.isei.scod.Mapper.UtenteMapper;
-import com.isei.scod.Repository.UtenteRepository;
+import com.isei.scod.Repository.SyutUtenteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,7 +15,7 @@ import java.util.Optional;
 public class UtenteService {
 
     @Autowired
-    UtenteRepository utenteRepository;
+    SyutUtenteRepository syutUtenteRepository;
 
     @Autowired
     UtenteMapper utenteMapper;
@@ -28,13 +28,13 @@ public class UtenteService {
         SyutUtente newUser = utenteMapper.fromRegisterDTOToUtente(registerDTO);
         newUser.setSyutDataAbilitazione(LocalDate.now());
         newUser.setSyutPasswordHash(passwordEncoder.getPasswordEncoder().encode(newUser.getSyutPasswordHash()));
-        utenteRepository.save(newUser);
+        syutUtenteRepository.save(newUser);
         return true;
     }
 
     public Optional<SyutUtente> getUser(String user) {
 
-        return utenteRepository.findBySyutUserName(user);
+        return syutUtenteRepository.findBySyutUserName(user);
 
     }
 

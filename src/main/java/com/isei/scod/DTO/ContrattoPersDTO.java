@@ -1,71 +1,52 @@
-package com.isei.scod.Entity;
+package com.isei.scod.DTO;
 
+import com.isei.scod.Entity.AnpePersona;
+import com.isei.scod.Entity.CoccCcnl;
+import com.isei.scod.Entity.ColiLivello;
+import com.isei.scod.Entity.CotcTipocontratto;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "CODI_CONTRATTOPERS")
-public class CodiContrattoper implements Serializable {
-    private static final long serialVersionUID = -6949973187346397226L;
-    @Id
-    @Column(name = "CODI_CONTRATTOPERSID", nullable = false)
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+@AllArgsConstructor
+public class ContrattoPersDTO {
+
     private Integer id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CODI_FK_COTCTIPOCONTRATTOID")
     private CotcTipocontratto codiFkCotctipocontrattoid;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CODI_FK_ANPEPERSONAID")
     private AnpePersona codiFkAnpepersonaid;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CODI_FK_COCCCCNLID")
     private CoccCcnl codiFkCoccccnlid;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "CODI_FK_COLILIVELLOID")
     private ColiLivello codiFkColilivelloid;
 
-    @Column(name = "CODI_RALCOMPENSO", precision = 15, scale = 2)
     private BigDecimal codiRalcompenso;
 
-    @Column(name = "CODI_MONTEORE")
     private Integer codiMonteore;
 
     @NotNull
-    @Column(name = "CODI_DATAINIZIOCONTRATTO", nullable = false)
     private LocalDate codiDatainiziocontratto;
 
-    @Column(name = "CODI_DATAFINECONTRATTO")
     private LocalDate codiDatafinecontratto;
 
-    @Column(name = "CODI_SMARTWORKING")
     private Boolean codiSmartworking;
 
     @Lob
-    @Column(name = "CODI_NOTE")
     private String codiNote;
 
     @Size(max = 50)
     @NotNull
-    @Column(name = "CODI_SYSUSER", nullable = false, length = 50)
     private String codiSysuser;
 
-    @Column(name = "CODI_SYSDATE")
     private LocalDate codiSysdate;
 
-    @Column(name = "CODI_FLAG_ATTIVA")
     private Integer codiFlagAttiva;
 
     public Integer getId() {

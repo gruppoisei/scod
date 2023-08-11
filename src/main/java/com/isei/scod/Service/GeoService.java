@@ -14,29 +14,29 @@ import java.util.Optional;
 public class GeoService {
 
     @Autowired
-    PaeseRepository paeseRepository;
+    GepaPaeseRepository gepaPaeseRepository;
 
     @Autowired
-    ComuneRepository comuneRepository;
+    GecoComuneRepository gecoComuneRepository;
 
     @Autowired
-    ToponimoRepository toponimoRepository;
+    GetoToponimoRepository getoToponimoRepository;
 
     @Autowired
-    ProvinciaRepository provinciaRepository;
+    GeprProvinciaRepository geprProvinciaRepository;
 
     @Autowired
-    RegioneRepository regioneRepository;
+    GereRegioneRepository gereRegioneRepository;
 
     @Autowired
-    AreaGeograficaRepository areaGeograficaRepository;
+    GeagAreaGeograficaRepository geagAreaGeograficaRepository;
 
     @Autowired
     GeoMapper geoMapper;
 
     public PaeseDTO getPaeseById(Integer id) throws NotFoundException {
 
-        Optional<GepaPaese> entity =  paeseRepository.findById(id);
+        Optional<GepaPaese> entity =  gepaPaeseRepository.findById(id);
 
         if (!entity.isPresent())
             throw new NotFoundException(GepaPaese.class, id );
@@ -47,7 +47,7 @@ public class GeoService {
 
     public ComuneDTO getComuneById(Integer id) throws NotFoundException {
 
-        Optional<GecoComune> entity = comuneRepository.findById(id);
+        Optional<GecoComune> entity = gecoComuneRepository.findById(id);
 
         if (!entity.isPresent())
             throw new NotFoundException(GecoComune.class, id);
@@ -57,7 +57,7 @@ public class GeoService {
 
     public ToponimoDTO getToponimoById(String  toponimo) throws NotFoundException {
 
-        Optional<GetoToponimo> entity = toponimoRepository.findById(toponimo);
+        Optional<GetoToponimo> entity = getoToponimoRepository.findById(toponimo);
 
         if (!entity.isPresent())
             throw new NotFoundException(GetoToponimo.class, toponimo);
@@ -67,7 +67,7 @@ public class GeoService {
 
     public ProvinciaDTO getProvinciaById(Integer id) throws NotFoundException {
 
-        Optional<GeprProvincia> entity = provinciaRepository.findById(id);
+        Optional<GeprProvincia> entity = geprProvinciaRepository.findById(id);
 
         if (!entity.isPresent())
             throw new NotFoundException(GeprProvincia.class, id);
@@ -77,7 +77,7 @@ public class GeoService {
 
     public RegioneDTO getRegioneById(Integer id) throws NotFoundException {
 
-        Optional<GereRegione> entity = regioneRepository.findById(id);
+        Optional<GereRegione> entity = gereRegioneRepository.findById(id);
 
         if (!entity.isPresent())
             throw new NotFoundException(GereRegione.class, id);
@@ -87,7 +87,7 @@ public class GeoService {
 
     public AreaGeograficaDTO getAreaGeograficaById(Integer id) throws NotFoundException {
 
-        Optional<GeagAreaGeografica> entity = areaGeograficaRepository.findById(id);
+        Optional<GeagAreaGeografica> entity = geagAreaGeograficaRepository.findById(id);
 
         if (!entity.isPresent())
             throw new NotFoundException(GeagAreaGeografica.class, id);

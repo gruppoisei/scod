@@ -3,7 +3,6 @@ package com.isei.scod.ConfigSecurity;
 import com.isei.scod.DTO.LoginResponseDTO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.cache.annotation.CacheEvict;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 

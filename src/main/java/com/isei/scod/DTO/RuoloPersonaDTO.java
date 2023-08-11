@@ -1,74 +1,51 @@
-package com.isei.scod.Entity;
+package com.isei.scod.DTO;
 
-import jakarta.persistence.*;
+import com.isei.scod.Entity.AnruRuolo;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "ANRP_RUOLOPERSONA")
-public class AnrpRuolopersona implements Serializable {
-    private static final long serialVersionUID = -8162036409479713360L;
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ANRP_RUOLOPERSONAID", nullable = false)
+@AllArgsConstructor
+public class RuoloPersonaDTO {
+
     private Integer id;
+    private PersonaDTO anrpFkAnpePersonaid;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ANRP_FK_ANPE_PERSONAID")
-    private AnpePersona anrpFkAnpePersonaid;
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ANRP_FK_ANRU_RUOLOID")
     private AnruRuolo anrpFkAnruRuoloid;
 
-    @Column(name = "ANRP_DATAINIZIO")
     private LocalDate anrpDatainizio;
 
-    @Column(name = "ANRP_DATAFINE")
     private LocalDate anrpDatafine;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "ANRP_FK_ANPE_PERSONATUTORID")
-    private AnpePersona anrpFkAnpePersonatutorid;
+    private PersonaDTO anrpFkAnpePersonatutorid;
 
     @Size(max = 600)
-    @Column(name = "ANRP_NOTE", length = 600)
     private String anrpNote;
 
     @Size(max = 100)
-    @Column(name = "ANRP_FORMAZIONETRASVERSALE1ANNO", length = 100)
     private String anrpFormazionetrasversale1anno;
 
     @Size(max = 100)
-    @Column(name = "ANRP_FORMAZIONETRASVERSALE2ANNO", length = 100)
     private String anrpFormazionetrasversale2anno;
 
     @Size(max = 100)
-    @Column(name = "ANRP_FORMAZIONETRASVERSALE3ANNO", length = 100)
     private String anrpFormazionetrasversale3anno;
 
-    @Column(name = "ANRP_DATAINIZIOFORMTECNICA")
+
     private LocalDate anrpDatainizioformtecnica;
 
-    @Column(name = "ANRP_DATAFINEFORMTECNICA")
     private LocalDate anrpDatafineformtecnica;
 
     @Size(max = 50)
     @NotNull
-    @Column(name = "ANRP_SYSUSER", nullable = false, length = 50)
     private String anrpSysuser;
 
-    @Column(name = "ANRP_SYSDATE")
     private LocalDate anrpSysdate;
 
-    @Column(name = "ANRP_FLAG_ATTIVA")
     private Integer anrpFlagAttiva;
 
     public Integer getId() {
@@ -79,11 +56,11 @@ public class AnrpRuolopersona implements Serializable {
         this.id = id;
     }
 
-    public AnpePersona getAnrpFkAnpePersonaid() {
+    public PersonaDTO getAnrpFkAnpePersonaid() {
         return anrpFkAnpePersonaid;
     }
 
-    public void setAnrpFkAnpePersonaid(AnpePersona anrpFkAnpePersonaid) {
+    public void setAnrpFkAnpePersonaid(PersonaDTO anrpFkAnpePersonaid) {
         this.anrpFkAnpePersonaid = anrpFkAnpePersonaid;
     }
 
@@ -111,11 +88,11 @@ public class AnrpRuolopersona implements Serializable {
         this.anrpDatafine = anrpDatafine;
     }
 
-    public AnpePersona getAnrpFkAnpePersonatutorid() {
+    public PersonaDTO getAnrpFkAnpePersonatutorid() {
         return anrpFkAnpePersonatutorid;
     }
 
-    public void setAnrpFkAnpePersonatutorid(AnpePersona anrpFkAnpePersonatutorid) {
+    public void setAnrpFkAnpePersonatutorid(PersonaDTO anrpFkAnpePersonatutorid) {
         this.anrpFkAnpePersonatutorid = anrpFkAnpePersonatutorid;
     }
 

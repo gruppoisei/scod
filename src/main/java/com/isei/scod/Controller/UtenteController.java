@@ -1,7 +1,6 @@
 package com.isei.scod.Controller;
 
 import com.isei.scod.DTO.RegisterDTO;
-import com.isei.scod.DTO.UserDetailDTO;
 import com.isei.scod.Service.UtenteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

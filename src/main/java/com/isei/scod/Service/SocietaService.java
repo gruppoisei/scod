@@ -7,7 +7,7 @@ import com.isei.scod.Entity.AntsTipoSocieta;
 import com.isei.scod.Exception.NotFoundException;
 import com.isei.scod.Mapper.SocietaMapper;
 import com.isei.scod.Repository.AnsoSocietaRepository;
-import com.isei.scod.Repository.TipoSocietaRepository;
+import com.isei.scod.Repository.AntsTipoSocietaRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,7 +24,7 @@ public class SocietaService {
     AnsoSocietaRepository ansoSocietaRepository;
 
     @Autowired
-    TipoSocietaRepository tipoSocietaRepository;
+    AntsTipoSocietaRepository antsTipoSocietaRepository;
 
     public Boolean saveAnsoSocieta(@Valid AnsoSocietaDTO dto) {
 
@@ -49,7 +49,7 @@ public class SocietaService {
 
     public TipoSocietaDTO getTipoSocietaById(Integer id) throws NotFoundException {
 
-        Optional<AntsTipoSocieta> entity =  tipoSocietaRepository.findById(id);
+        Optional<AntsTipoSocieta> entity =  antsTipoSocietaRepository.findById(id);
 
         if (!entity.isPresent())
             throw new NotFoundException(AntsTipoSocieta.class, id );
