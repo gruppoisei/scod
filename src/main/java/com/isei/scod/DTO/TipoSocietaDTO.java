@@ -1,52 +1,28 @@
-package com.isei.scod.Entity;
+package com.isei.scod.DTO;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
-import java.io.Serializable;
 import java.time.LocalDate;
 
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "ANTS_TIPOSOCIETA")
-public class AntsTiposocieta implements Serializable {
-    private static final long serialVersionUID = 7584401466293022950L;
-    @Id
-    @Column(name = "ANTS_TIPOSOCID", nullable = false)
-    private Integer id;
+@AllArgsConstructor
+public class TipoSocietaDTO {
 
     @Size(max = 100)
     @NotNull
-    @Column(name = "ANTS_TIPOSOCDESC", nullable = false, length = 100)
     private String antsTiposocdesc;
 
     @Size(max = 50)
     @NotNull
-    @Column(name = "ANTS_SYSUSER", nullable = false, length = 50)
     private String antsSysuser;
 
-    @Column(name = "ANTS_SYSDATE")
     private LocalDate antsSysdate;
 
-    @Column(name = "ANTS_FLAG_ATTIVA")
     private Integer antsFlagAttiva;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public String getAntsTiposocdesc() {
         return antsTiposocdesc;
