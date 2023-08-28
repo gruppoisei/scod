@@ -65,4 +65,5 @@ public class AreaGeograficaDTO {
     public void setGeagFlagAttiva(Integer geagFlagAttiva) {
         this.geagFlagAttiva = geagFlagAttiva;
     }
+
 }
