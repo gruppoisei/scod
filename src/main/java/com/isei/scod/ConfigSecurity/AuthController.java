@@ -20,12 +20,13 @@ public class AuthController {
 
     @PostMapping("/refresh")
     public LoginResponseDTO refreshToken( Authentication authentication,@RequestBody String refToken) {
-        LoginResponseDTO authResp = new LoginResponseDTO();
-       if(!tokenService.authToken(authentication,refToken)){
+        LoginResponseDTO refreshResponse = new LoginResponseDTO();
+       if(!tokenService.authToken(authentication,refToken)) {
            return null;
        }
-        authResp = token(authentication);
-        return authResp;
+        String token = tokenService.generateToken(authentication);
+        refreshResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(30*60*1000).withUserId(1);
+        return refreshResponse;
     }
 
     @PostMapping("/token")
@@ -35,7 +36,7 @@ public class AuthController {
         String token = tokenService.generateToken(authentication);
         String refreshToken = tokenService.generateRefreshToken(authentication);
         LOG.info("Token granted: {}", token);
-        loginResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(3600).withUserId(1).withRefreshToken(refreshToken);
+        loginResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(20*60*1000).withUserId(1).withRefreshToken(refreshToken);
         return loginResponse;
     }
 
