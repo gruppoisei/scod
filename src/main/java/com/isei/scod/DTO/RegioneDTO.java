@@ -18,7 +18,7 @@ public class RegioneDTO {
     @NotNull
     private String gereDeno;
 
-    private GeagAreaGeografica gereFkGeagAgeoid;
+    private AreaGeograficaDTO gereFkGeagAgeoid;
 
     @Size(max = 50)
     @NotNull
@@ -44,11 +44,11 @@ public class RegioneDTO {
         this.gereDeno = gereDeno;
     }
 
-    public GeagAreaGeografica getGereFkGeagAgeoid() {
+    public AreaGeograficaDTO getGereFkGeagAgeoid() {
         return gereFkGeagAgeoid;
     }
 
-    public void setGereFkGeagAgeoid(GeagAreaGeografica gereFkGeagAgeoid) {
+    public void setGereFkGeagAgeoid(AreaGeograficaDTO gereFkGeagAgeoid) {
         this.gereFkGeagAgeoid = gereFkGeagAgeoid;
     }
 

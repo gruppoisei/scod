@@ -14,7 +14,7 @@ public class ProvinciaDTO {
 
     private Integer id;
 
-    private GereRegione geprFkGereRegioneid;
+    private RegioneDTO geprFkGereRegioneid;
 
     @Size(max = 200)
     @NotNull
@@ -40,11 +40,11 @@ public class ProvinciaDTO {
         this.id = id;
     }
 
-    public GereRegione getGeprFkGereRegioneid() {
+    public RegioneDTO getGeprFkGereRegioneid() {
         return geprFkGereRegioneid;
     }
 
-    public void setGeprFkGereRegioneid(GereRegione geprFkGereRegioneid) {
+    public void setGeprFkGereRegioneid(RegioneDTO geprFkGereRegioneid) {
         this.geprFkGereRegioneid = geprFkGereRegioneid;
     }
 

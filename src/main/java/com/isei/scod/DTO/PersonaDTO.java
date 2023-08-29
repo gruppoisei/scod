@@ -29,20 +29,20 @@ public class PersonaDTO {
     private LocalDate anpeDatascadenzaidoneitamedica;
     private LocalDate anpeDatacorsosicurezza;
     @NotNull
-    private AnsoSocieta anpeFkAnsoSocietaid;
+    private SocietaDTO anpeFkAnsoSocietaid;
     @Size(max = 20)
     @NotNull
     private String anpeCodicefiscale;
     @Size(max = 11)
     private String anpePartitaiva;
-    private GepaPaese anpeFkGepaPaeseidPaesenascita;
-    private GepaPaese anpeFkGepaPaeseidPaesedomicilio;
-    private GepaPaese anpeFkGepaPaeseidPaeseresidenza;
-    private GecoComune anpeFkGecoComuneidComunenascita;
-    private GecoComune anpeFkGecoComuneidComuneresidenza;
-    private GecoComune anpeFkGecoComuneidComunedomicilio;
-    private GetoToponimo anpeFkGetoToponimoidToponimoresidenza;
-    private GetoToponimo anpeFkGetoToponimoidToponimodomicilio;
+    private PaeseDTO anpeFkGepaPaeseidPaesenascita;
+    private PaeseDTO anpeFkGepaPaeseidPaesedomicilio;
+    private PaeseDTO anpeFkGepaPaeseidPaeseresidenza;
+    private ComuneDTO anpeFkGecoComuneidComunenascita;
+    private ComuneDTO anpeFkGecoComuneidComuneresidenza;
+    private ComuneDTO anpeFkGecoComuneidComunedomicilio;
+    private ToponimoDTO anpeFkGetoToponimoidToponimoresidenza;
+    private ToponimoDTO anpeFkGetoToponimoidToponimodomicilio;
     @Size(max = 400)
     @NotNull
     private String anpeIndirizzoresidenza;
@@ -132,11 +132,11 @@ public class PersonaDTO {
         this.anpeDatacorsosicurezza = anpeDatacorsosicurezza;
     }
 
-    public AnsoSocieta getAnpeFkAnsoSocietaid() {
+    public SocietaDTO getAnpeFkAnsoSocietaid() {
         return anpeFkAnsoSocietaid;
     }
 
-    public void setAnpeFkAnsoSocietaid(AnsoSocieta anpeFkAnsoSocietaid) {
+    public void setAnpeFkAnsoSocietaid(SocietaDTO anpeFkAnsoSocietaid) {
         this.anpeFkAnsoSocietaid = anpeFkAnsoSocietaid;
     }
 
@@ -156,67 +156,67 @@ public class PersonaDTO {
         this.anpePartitaiva = anpePartitaiva;
     }
 
-    public GepaPaese getAnpeFkGepaPaeseidPaesenascita() {
+    public PaeseDTO getAnpeFkGepaPaeseidPaesenascita() {
         return anpeFkGepaPaeseidPaesenascita;
     }
 
-    public void setAnpeFkGepaPaeseidPaesenascita(GepaPaese anpeFkGepaPaeseidPaesenascita) {
+    public void setAnpeFkGepaPaeseidPaesenascita(PaeseDTO anpeFkGepaPaeseidPaesenascita) {
         this.anpeFkGepaPaeseidPaesenascita = anpeFkGepaPaeseidPaesenascita;
     }
 
-    public GepaPaese getAnpeFkGepaPaeseidPaesedomicilio() {
+    public PaeseDTO getAnpeFkGepaPaeseidPaesedomicilio() {
         return anpeFkGepaPaeseidPaesedomicilio;
     }
 
-    public void setAnpeFkGepaPaeseidPaesedomicilio(GepaPaese anpeFkGepaPaeseidPaesedomicilio) {
+    public void setAnpeFkGepaPaeseidPaesedomicilio(PaeseDTO anpeFkGepaPaeseidPaesedomicilio) {
         this.anpeFkGepaPaeseidPaesedomicilio = anpeFkGepaPaeseidPaesedomicilio;
     }
 
-    public GepaPaese getAnpeFkGepaPaeseidPaeseresidenza() {
+    public PaeseDTO getAnpeFkGepaPaeseidPaeseresidenza() {
         return anpeFkGepaPaeseidPaeseresidenza;
     }
 
-    public void setAnpeFkGepaPaeseidPaeseresidenza(GepaPaese anpeFkGepaPaeseidPaeseresidenza) {
+    public void setAnpeFkGepaPaeseidPaeseresidenza(PaeseDTO anpeFkGepaPaeseidPaeseresidenza) {
         this.anpeFkGepaPaeseidPaeseresidenza = anpeFkGepaPaeseidPaeseresidenza;
     }
 
-    public GecoComune getAnpeFkGecoComuneidComunenascita() {
+    public ComuneDTO getAnpeFkGecoComuneidComunenascita() {
         return anpeFkGecoComuneidComunenascita;
     }
 
-    public void setAnpeFkGecoComuneidComunenascita(GecoComune anpeFkGecoComuneidComunenascita) {
+    public void setAnpeFkGecoComuneidComunenascita(ComuneDTO anpeFkGecoComuneidComunenascita) {
         this.anpeFkGecoComuneidComunenascita = anpeFkGecoComuneidComunenascita;
     }
 
-    public GecoComune getAnpeFkGecoComuneidComuneresidenza() {
+    public ComuneDTO getAnpeFkGecoComuneidComuneresidenza() {
         return anpeFkGecoComuneidComuneresidenza;
     }
 
-    public void setAnpeFkGecoComuneidComuneresidenza(GecoComune anpeFkGecoComuneidComuneresidenza) {
+    public void setAnpeFkGecoComuneidComuneresidenza(ComuneDTO anpeFkGecoComuneidComuneresidenza) {
         this.anpeFkGecoComuneidComuneresidenza = anpeFkGecoComuneidComuneresidenza;
     }
 
-    public GecoComune getAnpeFkGecoComuneidComunedomicilio() {
+    public ComuneDTO getAnpeFkGecoComuneidComunedomicilio() {
         return anpeFkGecoComuneidComunedomicilio;
     }
 
-    public void setAnpeFkGecoComuneidComunedomicilio(GecoComune anpeFkGecoComuneidComunedomicilio) {
+    public void setAnpeFkGecoComuneidComunedomicilio(ComuneDTO anpeFkGecoComuneidComunedomicilio) {
         this.anpeFkGecoComuneidComunedomicilio = anpeFkGecoComuneidComunedomicilio;
     }
 
-    public GetoToponimo getAnpeFkGetoToponimoidToponimoresidenza() {
+    public ToponimoDTO getAnpeFkGetoToponimoidToponimoresidenza() {
         return anpeFkGetoToponimoidToponimoresidenza;
     }
 
-    public void setAnpeFkGetoToponimoidToponimoresidenza(GetoToponimo anpeFkGetoToponimoidToponimoresidenza) {
+    public void setAnpeFkGetoToponimoidToponimoresidenza(ToponimoDTO anpeFkGetoToponimoidToponimoresidenza) {
         this.anpeFkGetoToponimoidToponimoresidenza = anpeFkGetoToponimoidToponimoresidenza;
     }
 
-    public GetoToponimo getAnpeFkGetoToponimoidToponimodomicilio() {
+    public ToponimoDTO getAnpeFkGetoToponimoidToponimodomicilio() {
         return anpeFkGetoToponimoidToponimodomicilio;
     }
 
-    public void setAnpeFkGetoToponimoidToponimodomicilio(GetoToponimo anpeFkGetoToponimoidToponimodomicilio) {
+    public void setAnpeFkGetoToponimoidToponimodomicilio(ToponimoDTO anpeFkGetoToponimoidToponimodomicilio) {
         this.anpeFkGetoToponimoidToponimodomicilio = anpeFkGetoToponimoidToponimodomicilio;
     }
 

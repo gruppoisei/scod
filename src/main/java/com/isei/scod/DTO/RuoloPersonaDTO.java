@@ -15,7 +15,7 @@ public class RuoloPersonaDTO {
     private Integer id;
     private PersonaDTO anrpFkAnpePersonaid;
 
-    private AnruRuolo anrpFkAnruRuoloid;
+    private RuoloDTO anrpFkAnruRuoloid;
 
     private LocalDate anrpDatainizio;
 
@@ -64,11 +64,11 @@ public class RuoloPersonaDTO {
         this.anrpFkAnpePersonaid = anrpFkAnpePersonaid;
     }
 
-    public AnruRuolo getAnrpFkAnruRuoloid() {
+    public RuoloDTO getAnrpFkAnruRuoloid() {
         return anrpFkAnruRuoloid;
     }
 
-    public void setAnrpFkAnruRuoloid(AnruRuolo anrpFkAnruRuoloid) {
+    public void setAnrpFkAnruRuoloid(RuoloDTO anrpFkAnruRuoloid) {
         this.anrpFkAnruRuoloid = anrpFkAnruRuoloid;
     }
 

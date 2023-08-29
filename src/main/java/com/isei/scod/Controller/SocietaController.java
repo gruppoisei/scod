@@ -1,6 +1,7 @@
 package com.isei.scod.Controller;
 
-import com.isei.scod.DTO.AnsoSocietaDTO;
+
+import com.isei.scod.DTO.SocietaDTO;
 import com.isei.scod.DTO.TipoSocietaDTO;
 import com.isei.scod.Exception.NotFoundException;
 import com.isei.scod.Service.SocietaService;
@@ -18,7 +19,7 @@ public class SocietaController {
 
 
     @PostMapping("/saveAnsoSocieta")
-    public ResponseEntity<Boolean> saveAnsoSocieta(@RequestBody AnsoSocietaDTO dto) {
+    public ResponseEntity<Boolean> saveAnsoSocieta(@RequestBody SocietaDTO dto) {
 
         try {
 
@@ -38,7 +39,7 @@ public class SocietaController {
     }
 
     @GetMapping("/getAnsoSocieta/{id}")
-    public ResponseEntity<AnsoSocietaDTO> getAnsoSocietaById(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<SocietaDTO> getAnsoSocietaById(@PathVariable(value = "id") Integer id) {
 
         try {
 

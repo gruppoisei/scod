@@ -19,13 +19,13 @@ public class ContrattoPersDTO {
 
     private Integer id;
 
-    private CotcTipocontratto codiFkCotctipocontrattoid;
+    private TipoContrattoDTO codiFkCotctipocontrattoid;
 
-    private AnpePersona codiFkAnpepersonaid;
+    private PersonaDTO codiFkAnpepersonaid;
 
-    private CoccCcnl codiFkCoccccnlid;
+    private CcnlDTO codiFkCoccccnlid;
 
-    private ColiLivello codiFkColilivelloid;
+    private LivelloDTO codiFkColilivelloid;
 
     private BigDecimal codiRalcompenso;
 
@@ -57,35 +57,35 @@ public class ContrattoPersDTO {
         this.id = id;
     }
 
-    public CotcTipocontratto getCodiFkCotctipocontrattoid() {
+    public TipoContrattoDTO getCodiFkCotctipocontrattoid() {
         return codiFkCotctipocontrattoid;
     }
 
-    public void setCodiFkCotctipocontrattoid(CotcTipocontratto codiFkCotctipocontrattoid) {
+    public void setCodiFkCotctipocontrattoid(TipoContrattoDTO codiFkCotctipocontrattoid) {
         this.codiFkCotctipocontrattoid = codiFkCotctipocontrattoid;
     }
 
-    public AnpePersona getCodiFkAnpepersonaid() {
+    public PersonaDTO getCodiFkAnpepersonaid() {
         return codiFkAnpepersonaid;
     }
 
-    public void setCodiFkAnpepersonaid(AnpePersona codiFkAnpepersonaid) {
+    public void setCodiFkAnpepersonaid(PersonaDTO codiFkAnpepersonaid) {
         this.codiFkAnpepersonaid = codiFkAnpepersonaid;
     }
 
-    public CoccCcnl getCodiFkCoccccnlid() {
+    public CcnlDTO getCodiFkCoccccnlid() {
         return codiFkCoccccnlid;
     }
 
-    public void setCodiFkCoccccnlid(CoccCcnl codiFkCoccccnlid) {
+    public void setCodiFkCoccccnlid(CcnlDTO codiFkCoccccnlid) {
         this.codiFkCoccccnlid = codiFkCoccccnlid;
     }
 
-    public ColiLivello getCodiFkColilivelloid() {
+    public LivelloDTO getCodiFkColilivelloid() {
         return codiFkColilivelloid;
     }
 
-    public void setCodiFkColilivelloid(ColiLivello codiFkColilivelloid) {
+    public void setCodiFkColilivelloid(LivelloDTO codiFkColilivelloid) {
         this.codiFkColilivelloid = codiFkColilivelloid;
     }
 

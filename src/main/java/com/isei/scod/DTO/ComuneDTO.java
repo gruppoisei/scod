@@ -14,7 +14,7 @@ public class ComuneDTO {
 
     private Integer id;
 
-    private GeprProvincia gecoFkGeprProvinciaid;
+    private ProvinciaDTO gecoFkGeprProvinciaid;
 
     @Size(max = 200)
     private String gecoDeno;
@@ -53,11 +53,11 @@ public class ComuneDTO {
         this.id = id;
     }
 
-    public GeprProvincia getGecoFkGeprProvinciaid() {
+    public ProvinciaDTO getGecoFkGeprProvinciaid() {
         return gecoFkGeprProvinciaid;
     }
 
-    public void setGecoFkGeprProvinciaid(GeprProvincia gecoFkGeprProvinciaid) {
+    public void setGecoFkGeprProvinciaid(ProvinciaDTO gecoFkGeprProvinciaid) {
         this.gecoFkGeprProvinciaid = gecoFkGeprProvinciaid;
     }
 

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class AnsoSocietaDTO {
+public class SocietaDTO {
 
     private Integer id;
 
@@ -25,11 +25,11 @@ public class AnsoSocietaDTO {
 
     private PrprProgetto ansoFkPrprProgettoid;
 
-    private GecoComune ansoFkGecoComuneid;
+    private ComuneDTO ansoFkGecoComuneid;
 
-    private GepaPaese ansoFkGepaPaeseid;
+    private PaeseDTO ansoFkGepaPaeseid;
 
-    private GetoToponimo ansoGetoToponimoid;
+    private ToponimoDTO ansoGetoToponimoid;
 
     @Size(max = 255)
     private String ansoSede;
@@ -98,27 +98,27 @@ public class AnsoSocietaDTO {
         this.ansoFkPrprProgettoid = ansoFkPrprProgettoid;
     }
 
-    public GecoComune getAnsoFkGecoComuneid() {
+    public ComuneDTO getAnsoFkGecoComuneid() {
         return ansoFkGecoComuneid;
     }
 
-    public void setAnsoFkGecoComuneid(GecoComune ansoFkGecoComuneid) {
+    public void setAnsoFkGecoComuneid(ComuneDTO ansoFkGecoComuneid) {
         this.ansoFkGecoComuneid = ansoFkGecoComuneid;
     }
 
-    public GepaPaese getAnsoFkGepaPaeseid() {
+    public PaeseDTO getAnsoFkGepaPaeseid() {
         return ansoFkGepaPaeseid;
     }
 
-    public void setAnsoFkGepaPaeseid(GepaPaese ansoFkGepaPaeseid) {
+    public void setAnsoFkGepaPaeseid(PaeseDTO ansoFkGepaPaeseid) {
         this.ansoFkGepaPaeseid = ansoFkGepaPaeseid;
     }
 
-    public GetoToponimo getAnsoGetoToponimoid() {
+    public ToponimoDTO getAnsoGetoToponimoid() {
         return ansoGetoToponimoid;
     }
 
-    public void setAnsoGetoToponimoid(GetoToponimo ansoGetoToponimoid) {
+    public void setAnsoGetoToponimoid(ToponimoDTO ansoGetoToponimoid) {
         this.ansoGetoToponimoid = ansoGetoToponimoid;
     }
 

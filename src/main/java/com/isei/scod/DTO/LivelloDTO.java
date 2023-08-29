@@ -14,7 +14,7 @@ public class LivelloDTO {
 
     private Integer id;
 
-    private CoccCcnl coliFkCoccccnlid;
+    private CcnlDTO coliFkCoccccnlid;
 
     @Size(max = 50)
     private String coliLivellocontratto;
@@ -35,11 +35,11 @@ public class LivelloDTO {
         this.id = id;
     }
 
-    public CoccCcnl getColiFkCoccccnlid() {
+    public CcnlDTO getColiFkCoccccnlid() {
         return coliFkCoccccnlid;
     }
 
-    public void setColiFkCoccccnlid(CoccCcnl coliFkCoccccnlid) {
+    public void setColiFkCoccccnlid(CcnlDTO coliFkCoccccnlid) {
         this.coliFkCoccccnlid = coliFkCoccccnlid;
     }
 

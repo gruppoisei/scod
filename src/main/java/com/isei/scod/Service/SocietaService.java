@@ -1,6 +1,6 @@
 package com.isei.scod.Service;
 
-import com.isei.scod.DTO.AnsoSocietaDTO;
+import com.isei.scod.DTO.SocietaDTO;
 import com.isei.scod.DTO.TipoSocietaDTO;
 import com.isei.scod.Entity.AnsoSocieta;
 import com.isei.scod.Entity.AntsTipoSocieta;
@@ -26,7 +26,7 @@ public class SocietaService {
     @Autowired
     AntsTipoSocietaRepository antsTipoSocietaRepository;
 
-    public Boolean saveAnsoSocieta(@Valid AnsoSocietaDTO dto) {
+    public Boolean saveAnsoSocieta(@Valid SocietaDTO dto) {
 
         AnsoSocieta entity = societaMapper.fromAnsoSocietaDTOToEntity(dto);
 
@@ -36,7 +36,7 @@ public class SocietaService {
 
     }
 
-    public AnsoSocietaDTO getAnsoSocietaById(Integer id) throws NotFoundException {
+    public SocietaDTO getAnsoSocietaById(Integer id) throws NotFoundException {
 
         Optional<AnsoSocieta> entity =  ansoSocietaRepository.findById(id);
 

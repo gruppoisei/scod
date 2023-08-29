@@ -15,9 +15,9 @@ public class DistaccoDTO {
 
     private Integer id;
 
-    private AnpePersona codsFkAnpepersonaid;
+    private PersonaDTO codsFkAnpepersonaid;
 
-    private AnsoSocieta codsSocietadistaccoid;
+    private SocietaDTO codsSocietadistaccoid;
 
     private Integer codsValoredistacco;
 
@@ -44,19 +44,19 @@ public class DistaccoDTO {
         this.id = id;
     }
 
-    public AnpePersona getCodsFkAnpepersonaid() {
+    public PersonaDTO getCodsFkAnpepersonaid() {
         return codsFkAnpepersonaid;
     }
 
-    public void setCodsFkAnpepersonaid(AnpePersona codsFkAnpepersonaid) {
+    public void setCodsFkAnpepersonaid(PersonaDTO codsFkAnpepersonaid) {
         this.codsFkAnpepersonaid = codsFkAnpepersonaid;
     }
 
-    public AnsoSocieta getCodsSocietadistaccoid() {
+    public SocietaDTO getCodsSocietadistaccoid() {
         return codsSocietadistaccoid;
     }
 
-    public void setCodsSocietadistaccoid(AnsoSocieta codsSocietadistaccoid) {
+    public void setCodsSocietadistaccoid(SocietaDTO codsSocietadistaccoid) {
         this.codsSocietadistaccoid = codsSocietadistaccoid;
     }
 
