@@ -70,6 +70,9 @@ public class PersonaService {
 
         List<AnrpRuolopersona> ruolopersonaList =  ruoloPersonaRepository.findByIdPersona(id);
 
+        if(ruolopersonaList.isEmpty())
+            throw new NotFoundException(AnrpRuolopersona.class, AnpePersona.class, id);
+
         List<AnruRuolo> ruoloList = new ArrayList<>();
 
         for(AnrpRuolopersona ruolopersona : ruolopersonaList)
