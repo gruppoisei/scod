@@ -1,6 +1,7 @@
 package com.isei.scod.ConfigSecurity;
 
 import com.isei.scod.DTO.LoginResponseDTO;
+import com.isei.scod.Entity.SyutUtente;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
@@ -36,7 +37,8 @@ public class AuthController {
         String token = tokenService.generateToken(authentication);
         String refreshToken = tokenService.generateRefreshToken(authentication);
         LOG.info("Token granted: {}", token);
-        loginResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(20*60*1000).withUserId(1).withRefreshToken(refreshToken);
+        Integer userId = ((SyutUtente) authentication.getPrincipal()).getId();
+        loginResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(20*60*1000).withUserId(userId).withRefreshToken(refreshToken);
         return loginResponse;
     }
 

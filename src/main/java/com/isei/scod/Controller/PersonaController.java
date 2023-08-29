@@ -1,6 +1,7 @@
 package com.isei.scod.Controller;
 
 import com.isei.scod.DTO.PersonaDTO;
+import com.isei.scod.DTO.PersonaLoginDTO;
 import com.isei.scod.DTO.RuoloDTO;
 import com.isei.scod.DTO.RuoloPersonaDTO;
 import com.isei.scod.Exception.NotFoundException;
@@ -46,11 +47,11 @@ public class PersonaController {
     }
 
     @GetMapping("/getPersona/{id}")
-    public ResponseEntity<PersonaDTO> getPersonaById(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<PersonaLoginDTO> getPersonaById(@PathVariable(value = "id") Integer id) {
 
         try {
 
-            return ResponseEntity.ok(personaService.getAnpePersonaById(id));
+            return ResponseEntity.ok(personaService.getPersonaById(id));
 
         } catch (NotFoundException e) {
 
