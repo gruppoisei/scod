@@ -3,7 +3,6 @@ package com.isei.scod.Service;
 import com.isei.scod.DTO.PersonaDTO;
 import com.isei.scod.DTO.PersonaLoginDTO;
 import com.isei.scod.DTO.RuoloDTO;
-import com.isei.scod.DTO.RuoloPersonaDTO;
 import com.isei.scod.Entity.AnpePersona;
 import com.isei.scod.Entity.AnrpRuolopersona;
 import com.isei.scod.Entity.AnruRuolo;
@@ -50,7 +49,15 @@ public class PersonaService {
 
     }
 
-    public PersonaLoginDTO getPersonaById(Integer id) throws NotFoundException {
+    public AnpePersona savePersona(@Valid PersonaDTO dto) {
+
+        AnpePersona entity = personaMapper.fromAnpePersonaDTOToEntity(dto);
+
+        return entity = anpePersonaRepository.save(entity);
+
+    }
+
+    public PersonaLoginDTO getPersonaLoginDTOById(Integer id) throws NotFoundException {
 
         Optional<AnpePersona> entity =  anpePersonaRepository.findById(id);
 
@@ -61,6 +68,19 @@ public class PersonaService {
 
         dto.setRuoli(getRuoloPersonaById(id));
 
+
+        return dto;
+
+    }
+
+    public PersonaDTO getPersonaDTOById(Integer id) throws NotFoundException {
+
+        Optional<AnpePersona> entity =  anpePersonaRepository.findById(id);
+
+        if (!entity.isPresent())
+            throw new NotFoundException(AnpePersona.class, id );
+
+        PersonaDTO dto = personaMapper.fromAnpePersonaEntityToPersonaDTO(entity.get());
 
         return dto;
 
@@ -84,6 +104,14 @@ public class PersonaService {
         return ruoloMapper.fromListAnruRuoloEntitytoDTO(ruoloList);
 
     }
+
+    public Boolean disattivaPersona(Integer idPersona) {
+
+        anpePersonaRepository.setFlagAttivaFalse(idPersona);
+
+        return true;
+    }
+
 
 
 

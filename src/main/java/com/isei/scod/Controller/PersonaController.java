@@ -46,12 +46,32 @@ public class PersonaController {
         }
     }
 
-    @GetMapping("/getPersona/{id}")
-    public ResponseEntity<PersonaLoginDTO> getPersonaById(@PathVariable(value = "id") Integer id) {
+    @GetMapping("/getPersonaLogin/{id}")
+    public ResponseEntity<PersonaLoginDTO> getPersonaLoginDTOById(@PathVariable(value = "id") Integer id) {
 
         try {
 
-            return ResponseEntity.ok(personaService.getPersonaById(id));
+            return ResponseEntity.ok(personaService.getPersonaLoginDTOById(id));
+
+        } catch (NotFoundException e) {
+
+            e.printStackTrace();
+            return ResponseEntity.notFound().build();
+
+        } catch (Exception e) {
+
+            e.printStackTrace();
+            return ResponseEntity.internalServerError().build();
+
+        }
+    }
+
+    @GetMapping("/getPersona/{id}")
+    public ResponseEntity<PersonaDTO> getPersonaDTOById(@PathVariable(value = "id") Integer id) {
+
+        try {
+
+            return ResponseEntity.ok(personaService.getPersonaDTOById(id));
 
         } catch (NotFoundException e) {
 

@@ -37,7 +37,7 @@ public class AuthController {
         String token = tokenService.generateToken(authentication);
         String refreshToken = tokenService.generateRefreshToken(authentication);
         LOG.info("Token granted: {}", token);
-        Integer userId = ((SyutUtente) authentication.getPrincipal()).getId();
+        Integer userId = ((SyutUtente) authentication.getPrincipal()).getSyutFkPersPersonaid();
         loginResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(20*60*1000).withUserId(userId).withRefreshToken(refreshToken);
         return loginResponse;
     }

@@ -1,9 +1,5 @@
 package com.isei.scod.DTO;
 
-import com.isei.scod.Entity.AnsoSocieta;
-import com.isei.scod.Entity.GecoComune;
-import com.isei.scod.Entity.GepaPaese;
-import com.isei.scod.Entity.GetoToponimo;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;

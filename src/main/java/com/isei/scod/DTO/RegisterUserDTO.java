@@ -10,7 +10,7 @@ import java.time.LocalDate;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class RegisterDTO {
+public class RegisterUserDTO {
 
     private Integer syutFkPersPersonaid;
 
