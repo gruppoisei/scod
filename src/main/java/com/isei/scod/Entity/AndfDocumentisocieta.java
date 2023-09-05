@@ -17,6 +17,7 @@ public class AndfDocumentisocieta implements Serializable {
     private static final long serialVersionUID = 4045006469207826729L;
     @Id
     @Column(name = "ANDF_DOCUMENTOPERDONAID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)

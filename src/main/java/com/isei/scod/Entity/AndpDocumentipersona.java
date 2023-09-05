@@ -19,6 +19,7 @@ public class AndpDocumentipersona implements Serializable {
     private static final long serialVersionUID = -3849341868378817723L;
     @Id
     @Column(name = "ANDP_DOCUMENTOPERDONAID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @ManyToOne(fetch = FetchType.LAZY)
