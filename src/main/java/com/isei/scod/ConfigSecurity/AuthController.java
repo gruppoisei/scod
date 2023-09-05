@@ -26,7 +26,8 @@ public class AuthController {
            return null;
        }
         String token = tokenService.generateToken(authentication);
-        refreshResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(30*60*1000).withUserId(1);
+        Integer userId = ((SyutUtente) authentication.getPrincipal()).getSyutFkPersPersonaid();
+        refreshResponse.withUserName(authentication.getName()).withToken(token).withExpirationTime(30*60*1000).withUserId(userId);
         return refreshResponse;
     }
 
