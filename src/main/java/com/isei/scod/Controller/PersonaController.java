@@ -26,13 +26,13 @@ public class PersonaController {
     @Autowired
     RuoloService ruoloService;
 
-    @PostMapping("/savePersona")
-    public ResponseEntity<Boolean> savePersona(@RequestBody PersonaDTO dto) {
+    @PostMapping(value = "/savePersona")
+    public ResponseEntity<Boolean> savePersona(@RequestParam("params") PersonaDTO dto) {
 
         try {
-
-            return ResponseEntity.ok(personaService.saveAnpePersona(dto));
-
+            System.out.println(dto.getAnpeNome() + "-" + dto.getAnpeCognome());
+            //return ResponseEntity.ok(personaService.saveAnpePersona(dto));
+            return ResponseEntity.ok(true);
         } catch (ConstraintViolationException e) {
 
             e.printStackTrace();
