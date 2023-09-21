@@ -38,6 +38,8 @@ public class DocumentoService {
     @Autowired
     DocumentoMapper documentoMapper;
 
+    private static final String ALTATIPODOCUMENTO = "ALTA TIPO DOCUMENTO";
+
     public Boolean saveDocumento(@Valid DocumentoDTO dto) {
 
         AndoDocumento entity = documentoMapper.fromAndoDocumentoDTOToEntity(dto);
@@ -52,7 +54,7 @@ public class DocumentoService {
         Optional<AndoDocumento> entity = documentoRepository.findByAndoSysuser(andoSysuser);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AltaTipodocumento.class, andoSysuser);
+            throw new NotFoundException(ALTATIPODOCUMENTO, andoSysuser);
 
         return documentoMapper.fromAndoDocumentoEntitytoDTO(entity.get());
     }

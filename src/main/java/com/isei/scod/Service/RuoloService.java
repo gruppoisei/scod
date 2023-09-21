@@ -20,12 +20,14 @@ public class RuoloService {
     @Autowired
     RuoloMapper ruoloMapper;
 
+    private static final String ALTATIPODOCUMENTO = "ALTA TIPO DOCUMENTO";
+
     public RuoloDTO getAnruRuoloById(Integer id) throws NotFoundException {
 
         Optional<AnruRuolo> entity =  anruRuoloRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AltaTipodocumento.class, id );
+            throw new NotFoundException(ALTATIPODOCUMENTO, id );
 
         return ruoloMapper.fromAnruRuoloEntitytoDTO(entity.get());
 

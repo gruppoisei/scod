@@ -20,12 +20,14 @@ public class StatoAbilitazioneService {
     @Autowired
     StatoAbilitazioneMapper statoAbilitazioneMapper;
 
+    private static final String ALTATIPODOCUMENTO = "ALTA TIPO DOCUMENTO";
+
     public StatoAbilitazioneDTO getSysaStatoAbilitazioneById(Integer id) throws NotFoundException {
 
         Optional<SysaStatoAbilitazione> entity =  sysaStatoAbilitazioneRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AltaTipodocumento.class, id );
+            throw new NotFoundException(ALTATIPODOCUMENTO, id );
 
         return statoAbilitazioneMapper.fromSysaStatoAbilitazioneEntitytoDTO(entity.get());
 

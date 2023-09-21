@@ -38,12 +38,15 @@ public class ContrattiService {
     @Autowired
     ContrattiMapper contrattiMapper;
 
+    private static final String CCNL = "CCNL";
+    private static final String COLILIVELLO = "COLI LIVELLO";
+
     public CcnlDTO getCcnlById(Integer id) throws NotFoundException {
 
         Optional<CoccCcnl> ccnl = ccnlRepository.findById(id);
 
         if (!ccnl.isPresent())
-            throw new NotFoundException(CcnlDTO.class, id);
+            throw new NotFoundException(CCNL, id);
 
         return contrattiMapper.fromCoccCnlEntityToDTO(ccnl.get());
     }
@@ -53,7 +56,7 @@ public class ContrattiService {
         Optional<CoccCcnl> ccnl = ccnlRepository.findByCoccDesc(desc);
 
         if (!ccnl.isPresent())
-            throw new NotFoundException(CcnlDTO.class, desc);
+            throw new NotFoundException(CCNL, desc);
 
         return contrattiMapper.fromCoccCnlEntityToDTO(ccnl.get());
 
@@ -64,7 +67,7 @@ public class ContrattiService {
         Optional<ColiLivello> livello = livelloRepository.findById(id);
 
         if (!livello.isPresent())
-            throw new NotFoundException(ColiLivello.class, id);
+            throw new NotFoundException(COLILIVELLO, id);
 
         return contrattiMapper.fromColiLivelloEntityToDTO(livello.get());
     }
@@ -74,7 +77,7 @@ public class ContrattiService {
         Optional<ColiLivello> livello = livelloRepository.findByColiFkCoccccnlid(contrattiMapper.fromCoccCnlDTOToEntity(getCcnlById(idCcnl)));
 
         if (!livello.isPresent())
-            throw new NotFoundException(ColiLivello.class, CcnlDTO.class, idCcnl);
+            throw new NotFoundException(COLILIVELLO, CCNL, idCcnl);
 
         return contrattiMapper.fromColiLivelloEntityToDTO(livello.get());
 
@@ -85,7 +88,7 @@ public class ContrattiService {
         Optional<CodiContrattoper> contratto = contrattoPerRepository.findById(id);
 
         if (!contratto.isPresent())
-            throw new NotFoundException(ColiLivello.class, id);
+            throw new NotFoundException(COLILIVELLO, id);
 
         return contrattiMapper.fromCodiContrattoperEntityToDTO(contratto.get());
     }
@@ -104,7 +107,7 @@ public class ContrattiService {
         Optional<CotcTipocontratto> tipoContratto = tipoContrattoRepository.findById(id);
 
         if (!tipoContratto.isPresent())
-            throw new NotFoundException(ColiLivello.class, id);
+            throw new NotFoundException(COLILIVELLO, id);
 
         return contrattiMapper.fromCotcTipocontrattoEntityToDTO(tipoContratto.get());
     }

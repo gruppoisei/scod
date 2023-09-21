@@ -4,9 +4,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.time.LocalDate;
 
 @NoArgsConstructor
@@ -14,39 +12,65 @@ import java.time.LocalDate;
 public class PersonaDTO {
 
     private Integer id;
-    private String[] ruoli;
+
     @Size(max = 100)
+    @NotNull
     private String anpeNome;
+
     @Size(max = 100)
+    @NotNull
     private String anpeCognome;
-    private LocalDate anpeDataNascita;
-    private LocalDate anpeDataVisitaMedica;
-    private LocalDate anpeDataCorsoSicurezza;
-    private String anpeLuogoNascita;
-    private String anpeProvinciaNascita;
+    private LocalDate anpeDatanascita;
+    private LocalDate anpeDataidoneitamedica;
+    private LocalDate anpeDatascadenzaidoneitamedica;
+    private LocalDate anpeDatacorsosicurezza;
+    @NotNull
+    private SocietaDTO anpeFkAnsoSocietaid;
     @Size(max = 20)
     @NotNull
     private String anpeCodicefiscale;
+    @Size(max = 11)
+    private String anpePartitaiva;
+    private PaeseDTO anpeFkGepaPaeseidPaesenascita;
+    private PaeseDTO anpeFkGepaPaeseidPaesedomicilio;
+    private PaeseDTO anpeFkGepaPaeseidPaeseresidenza;
+    private ComuneDTO anpeFkGecoComuneidComunenascita;
+    private ComuneDTO anpeFkGecoComuneidComuneresidenza;
+    private ComuneDTO anpeFkGecoComuneidComunedomicilio;
+    private ToponimoDTO anpeFkGetoToponimoidToponimoresidenza;
+    private ToponimoDTO anpeFkGetoToponimoidToponimodomicilio;
     @Size(max = 400)
-    private String anpeIndirizzoResidenza;
+    @NotNull
+    private String anpeIndirizzoresidenza;
     @Size(max = 20)
-    private String anpeCapResidenza;
+    @NotNull
+    private String anpeNumerocivicoresidenza;
+    @Size(max = 20)
+    @NotNull
+    private String anpeCapresidenza;
     @Size(max = 400)
-    private String anpeIndirizzoDomicilio;
+    private String anpeIndirizzodomicilio;
     @Size(max = 20)
-    private String anpeCapDomicilio;
+    private String anpeNumerocivicodomicilio;
+    @Size(max = 20)
+    private String anpeCapdomicilio;
+    @Size(max = 20)
+    private String anpeNtelefono1;
+    @Size(max = 20)
+    private String anpeNtelefono2;
+
     @Size(max = 200)
     @NotNull
-    private String anpeEmailAziendale;
+    private String anpeEmailaziendale;
+
     @Size(max = 200)
-    private String anpeEmailPersonale;
+    private String anpeEmailpersonale;
+    private LocalDate anpeSysdate;
 
-    private MultipartFile anpeDocumento;
-    private MultipartFile anpeCertificazioni;
-    private MultipartFile anpeCv;
-    private MultipartFile anpeCvAziendale;
-    private MultipartFile anpeTitoliStudio;
-
+    @Size(max = 50)
+    @NotNull
+    private String anpeSysuser;
+    private Integer anpeFlagAttiva;
 
     public Integer getId() {
         return id;
@@ -54,14 +78,6 @@ public class PersonaDTO {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String[] getRuoli() {
-        return ruoli;
-    }
-
-    public void setRuoli(String[] ruoli) {
-        this.ruoli = ruoli;
     }
 
     public String getAnpeNome() {
@@ -80,44 +96,44 @@ public class PersonaDTO {
         this.anpeCognome = anpeCognome;
     }
 
-    public LocalDate getAnpeDataNascita() {
-        return anpeDataNascita;
+    public LocalDate getAnpeDatanascita() {
+        return anpeDatanascita;
     }
 
-    public void setAnpeDataNascita(LocalDate anpeDataNascita) {
-        this.anpeDataNascita = anpeDataNascita;
+    public void setAnpeDatanascita(LocalDate anpeDatanascita) {
+        this.anpeDatanascita = anpeDatanascita;
     }
 
-    public LocalDate getAnpeDataVisitaMedica() {
-        return anpeDataVisitaMedica;
+    public LocalDate getAnpeDataidoneitamedica() {
+        return anpeDataidoneitamedica;
     }
 
-    public void setAnpeDataVisitaMedica(LocalDate anpeDataVisitaMedica) {
-        this.anpeDataVisitaMedica = anpeDataVisitaMedica;
+    public void setAnpeDataidoneitamedica(LocalDate anpeDataidoneitamedica) {
+        this.anpeDataidoneitamedica = anpeDataidoneitamedica;
     }
 
-    public LocalDate getAnpeDataCorsoSicurezza() {
-        return anpeDataCorsoSicurezza;
+    public LocalDate getAnpeDatascadenzaidoneitamedica() {
+        return anpeDatascadenzaidoneitamedica;
     }
 
-    public void setAnpeDataCorsoSicurezza(LocalDate anpeDataCorsoSicurezza) {
-        this.anpeDataCorsoSicurezza = anpeDataCorsoSicurezza;
+    public void setAnpeDatascadenzaidoneitamedica(LocalDate anpeDatascadenzaidoneitamedica) {
+        this.anpeDatascadenzaidoneitamedica = anpeDatascadenzaidoneitamedica;
     }
 
-    public String getAnpeLuogoNascita() {
-        return anpeLuogoNascita;
+    public LocalDate getAnpeDatacorsosicurezza() {
+        return anpeDatacorsosicurezza;
     }
 
-    public void setAnpeLuogoNascita(String anpeLuogoNascita) {
-        this.anpeLuogoNascita = anpeLuogoNascita;
+    public void setAnpeDatacorsosicurezza(LocalDate anpeDatacorsosicurezza) {
+        this.anpeDatacorsosicurezza = anpeDatacorsosicurezza;
     }
 
-    public String getAnpeProvinciaNascita() {
-        return anpeProvinciaNascita;
+    public SocietaDTO getAnpeFkAnsoSocietaid() {
+        return anpeFkAnsoSocietaid;
     }
 
-    public void setAnpeProvinciaNascita(String anpeProvinciaNascita) {
-        this.anpeProvinciaNascita = anpeProvinciaNascita;
+    public void setAnpeFkAnsoSocietaid(SocietaDTO anpeFkAnsoSocietaid) {
+        this.anpeFkAnsoSocietaid = anpeFkAnsoSocietaid;
     }
 
     public String getAnpeCodicefiscale() {
@@ -128,97 +144,179 @@ public class PersonaDTO {
         this.anpeCodicefiscale = anpeCodicefiscale;
     }
 
-    public String getAnpeIndirizzoResidenza() {
-        return anpeIndirizzoResidenza;
+    public String getAnpePartitaiva() {
+        return anpePartitaiva;
     }
 
-    public void setAnpeIndirizzoResidenza(String anpeIndirizzoResidenza) {
-        this.anpeIndirizzoResidenza = anpeIndirizzoResidenza;
+    public void setAnpePartitaiva(String anpePartitaiva) {
+        this.anpePartitaiva = anpePartitaiva;
     }
 
-    public String getAnpeCapResidenza() {
-        return anpeCapResidenza;
+    public PaeseDTO getAnpeFkGepaPaeseidPaesenascita() {
+        return anpeFkGepaPaeseidPaesenascita;
     }
 
-    public void setAnpeCapResidenza(String anpeCapResidenza) {
-        this.anpeCapResidenza = anpeCapResidenza;
+    public void setAnpeFkGepaPaeseidPaesenascita(PaeseDTO anpeFkGepaPaeseidPaesenascita) {
+        this.anpeFkGepaPaeseidPaesenascita = anpeFkGepaPaeseidPaesenascita;
     }
 
-    public String getAnpeIndirizzoDomicilio() {
-        return anpeIndirizzoDomicilio;
+    public PaeseDTO getAnpeFkGepaPaeseidPaesedomicilio() {
+        return anpeFkGepaPaeseidPaesedomicilio;
     }
 
-    public void setAnpeIndirizzoDomicilio(String anpeIndirizzoDomicilio) {
-        this.anpeIndirizzoDomicilio = anpeIndirizzoDomicilio;
+    public void setAnpeFkGepaPaeseidPaesedomicilio(PaeseDTO anpeFkGepaPaeseidPaesedomicilio) {
+        this.anpeFkGepaPaeseidPaesedomicilio = anpeFkGepaPaeseidPaesedomicilio;
     }
 
-    public String getAnpeCapDomicilio() {
-        return anpeCapDomicilio;
+    public PaeseDTO getAnpeFkGepaPaeseidPaeseresidenza() {
+        return anpeFkGepaPaeseidPaeseresidenza;
     }
 
-    public void setAnpeCapDomicilio(String anpeCapDomicilio) {
-        this.anpeCapDomicilio = anpeCapDomicilio;
+    public void setAnpeFkGepaPaeseidPaeseresidenza(PaeseDTO anpeFkGepaPaeseidPaeseresidenza) {
+        this.anpeFkGepaPaeseidPaeseresidenza = anpeFkGepaPaeseidPaeseresidenza;
     }
 
-    public String getAnpeEmailAziendale() {
-        return anpeEmailAziendale;
+    public ComuneDTO getAnpeFkGecoComuneidComunenascita() {
+        return anpeFkGecoComuneidComunenascita;
     }
 
-    public void setAnpeEmailAziendale(String anpeEmailAziendale) {
-        this.anpeEmailAziendale = anpeEmailAziendale;
+    public void setAnpeFkGecoComuneidComunenascita(ComuneDTO anpeFkGecoComuneidComunenascita) {
+        this.anpeFkGecoComuneidComunenascita = anpeFkGecoComuneidComunenascita;
     }
 
-    public String getAnpeEmailPersonale() {
-        return anpeEmailPersonale;
+    public ComuneDTO getAnpeFkGecoComuneidComuneresidenza() {
+        return anpeFkGecoComuneidComuneresidenza;
     }
 
-    public void setAnpeEmailPersonale(String anpeEmailPersonale) {
-        this.anpeEmailPersonale = anpeEmailPersonale;
+    public void setAnpeFkGecoComuneidComuneresidenza(ComuneDTO anpeFkGecoComuneidComuneresidenza) {
+        this.anpeFkGecoComuneidComuneresidenza = anpeFkGecoComuneidComuneresidenza;
     }
 
-    public MultipartFile getAnpeDocumento() {
-        return anpeDocumento;
+    public ComuneDTO getAnpeFkGecoComuneidComunedomicilio() {
+        return anpeFkGecoComuneidComunedomicilio;
     }
 
-    public void setAnpeDocumento(MultipartFile anpeDocumento) {
-        this.anpeDocumento = anpeDocumento;
+    public void setAnpeFkGecoComuneidComunedomicilio(ComuneDTO anpeFkGecoComuneidComunedomicilio) {
+        this.anpeFkGecoComuneidComunedomicilio = anpeFkGecoComuneidComunedomicilio;
     }
 
-    public MultipartFile getAnpeCertificazioni() {
-        return anpeCertificazioni;
+    public ToponimoDTO getAnpeFkGetoToponimoidToponimoresidenza() {
+        return anpeFkGetoToponimoidToponimoresidenza;
     }
 
-    public void setAnpeCertificazioni(MultipartFile anpeCertificazioni) {
-        this.anpeCertificazioni = anpeCertificazioni;
+    public void setAnpeFkGetoToponimoidToponimoresidenza(ToponimoDTO anpeFkGetoToponimoidToponimoresidenza) {
+        this.anpeFkGetoToponimoidToponimoresidenza = anpeFkGetoToponimoidToponimoresidenza;
     }
 
-    public MultipartFile getAnpeCv() {
-        return anpeCv;
+    public ToponimoDTO getAnpeFkGetoToponimoidToponimodomicilio() {
+        return anpeFkGetoToponimoidToponimodomicilio;
     }
 
-    public void setAnpeCv(MultipartFile anpeCv) {
-        this.anpeCv = anpeCv;
+    public void setAnpeFkGetoToponimoidToponimodomicilio(ToponimoDTO anpeFkGetoToponimoidToponimodomicilio) {
+        this.anpeFkGetoToponimoidToponimodomicilio = anpeFkGetoToponimoidToponimodomicilio;
     }
 
-    public MultipartFile getAnpeCvAziendale() {
-        return anpeCvAziendale;
+    public String getAnpeIndirizzoresidenza() {
+        return anpeIndirizzoresidenza;
     }
 
-    public void setAnpeCvAziendale(MultipartFile anpeCvAziendale) {
-        this.anpeCvAziendale = anpeCvAziendale;
+    public void setAnpeIndirizzoresidenza(String anpeIndirizzoresidenza) {
+        this.anpeIndirizzoresidenza = anpeIndirizzoresidenza;
     }
 
-    public MultipartFile getAnpeTitoliStudio() {
-        return anpeTitoliStudio;
+    public String getAnpeNumerocivicoresidenza() {
+        return anpeNumerocivicoresidenza;
     }
 
-    public void setAnpeTitoliStudio(MultipartFile anpeTitoliStudio) {
-        this.anpeTitoliStudio = anpeTitoliStudio;
+    public void setAnpeNumerocivicoresidenza(String anpeNumerocivicoresidenza) {
+        this.anpeNumerocivicoresidenza = anpeNumerocivicoresidenza;
     }
 
+    public String getAnpeCapresidenza() {
+        return anpeCapresidenza;
+    }
 
+    public void setAnpeCapresidenza(String anpeCapresidenza) {
+        this.anpeCapresidenza = anpeCapresidenza;
+    }
 
+    public String getAnpeIndirizzodomicilio() {
+        return anpeIndirizzodomicilio;
+    }
 
+    public void setAnpeIndirizzodomicilio(String anpeIndirizzodomicilio) {
+        this.anpeIndirizzodomicilio = anpeIndirizzodomicilio;
+    }
 
+    public String getAnpeNumerocivicodomicilio() {
+        return anpeNumerocivicodomicilio;
+    }
 
+    public void setAnpeNumerocivicodomicilio(String anpeNumerocivicodomicilio) {
+        this.anpeNumerocivicodomicilio = anpeNumerocivicodomicilio;
+    }
+
+    public String getAnpeCapdomicilio() {
+        return anpeCapdomicilio;
+    }
+
+    public void setAnpeCapdomicilio(String anpeCapdomicilio) {
+        this.anpeCapdomicilio = anpeCapdomicilio;
+    }
+
+    public String getAnpeNtelefono1() {
+        return anpeNtelefono1;
+    }
+
+    public void setAnpeNtelefono1(String anpeNtelefono1) {
+        this.anpeNtelefono1 = anpeNtelefono1;
+    }
+
+    public String getAnpeNtelefono2() {
+        return anpeNtelefono2;
+    }
+
+    public void setAnpeNtelefono2(String anpeNtelefono2) {
+        this.anpeNtelefono2 = anpeNtelefono2;
+    }
+
+    public String getAnpeEmailaziendale() {
+        return anpeEmailaziendale;
+    }
+
+    public void setAnpeEmailaziendale(String anpeEmailaziendale) {
+        this.anpeEmailaziendale = anpeEmailaziendale;
+    }
+
+    public String getAnpeEmailpersonale() {
+        return anpeEmailpersonale;
+    }
+
+    public void setAnpeEmailpersonale(String anpeEmailpersonale) {
+        this.anpeEmailpersonale = anpeEmailpersonale;
+    }
+
+    public LocalDate getAnpeSysdate() {
+        return anpeSysdate;
+    }
+
+    public void setAnpeSysdate(LocalDate anpeSysdate) {
+        this.anpeSysdate = anpeSysdate;
+    }
+
+    public String getAnpeSysuser() {
+        return anpeSysuser;
+    }
+
+    public void setAnpeSysuser(String anpeSysuser) {
+        this.anpeSysuser = anpeSysuser;
+    }
+
+    public Integer getAnpeFlagAttiva() {
+        return anpeFlagAttiva;
+    }
+
+    public void setAnpeFlagAttiva(Integer anpeFlagAttiva) {
+        this.anpeFlagAttiva = anpeFlagAttiva;
+    }
 }

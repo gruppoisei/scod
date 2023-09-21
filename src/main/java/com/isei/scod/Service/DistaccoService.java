@@ -21,12 +21,14 @@ public class DistaccoService {
     @Autowired
     DistaccoMapper distaccoMapper;
 
+    private static final String COLILIVELLO = "COLI LIVELLO";
+
     public DistaccoDTO getDistaccoById(Integer id) throws NotFoundException {
 
         Optional<CodsDistacco> distacco = distaccoRepository.findById(id);
 
         if (!distacco.isPresent())
-            throw new NotFoundException(ColiLivello.class, id);
+            throw new NotFoundException(COLILIVELLO, id);
 
         return distaccoMapper.fromCodsDistaccoEntityToDTO(distacco.get());
     }

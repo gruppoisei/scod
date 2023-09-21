@@ -1,7 +1,7 @@
 package com.isei.scod.Controller;
 
 import com.isei.scod.DTO.PersonaDTO;
-import com.isei.scod.DTO.PersonaLoginDTO;
+import com.isei.scod.DTO.PersonaAnagraficaDTO;
 import com.isei.scod.DTO.RuoloDTO;
 import com.isei.scod.DTO.RuoloPersonaDTO;
 import com.isei.scod.Exception.NotFoundException;
@@ -10,8 +10,12 @@ import com.isei.scod.Service.RuoloPersonaService;
 import com.isei.scod.Service.RuoloService;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/persona")
@@ -26,13 +30,13 @@ public class PersonaController {
     @Autowired
     RuoloService ruoloService;
 
-    @PostMapping(value = "/savePersona")
-    public ResponseEntity<Boolean> savePersona(@RequestParam("params") PersonaDTO dto) {
+    @PostMapping(value = "/savePersona", consumes = { MediaType.APPLICATION_JSON_VALUE,MediaType.MULTIPART_FORM_DATA_VALUE })
+    public ResponseEntity<Boolean> savePersona(@RequestPart("persona") String persona, @RequestPart("file") List<MultipartFile> file) {
 
         try {
-            System.out.println(dto.getAnpeNome() + "-" + dto.getAnpeCognome());
-            //return ResponseEntity.ok(personaService.saveAnpePersona(dto));
-            return ResponseEntity.ok(true);
+
+            return ResponseEntity.ok(personaService.convertAndSavePersonaDTO(persona, file));
+
         } catch (ConstraintViolationException e) {
 
             e.printStackTrace();
@@ -47,11 +51,11 @@ public class PersonaController {
     }
 
     @GetMapping("/getPersonaLogin/{id}")
-    public ResponseEntity<PersonaLoginDTO> getPersonaLoginDTOById(@PathVariable(value = "id") Integer id) {
+    public ResponseEntity<PersonaAnagraficaDTO> getPersonaAnagraficaDTOById(@PathVariable(value = "id") Integer id) {
 
         try {
 
-            return ResponseEntity.ok(personaService.getPersonaLoginDTOById(id));
+            return ResponseEntity.ok(personaService.getPersonaAnagraficaDTOById(id));
 
         } catch (NotFoundException e) {
 

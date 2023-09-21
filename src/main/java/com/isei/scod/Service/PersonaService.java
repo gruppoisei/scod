@@ -1,7 +1,9 @@
 package com.isei.scod.Service;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.isei.scod.DTO.PersonaDTO;
-import com.isei.scod.DTO.PersonaLoginDTO;
+import com.isei.scod.DTO.PersonaAnagraficaDTO;
+import com.isei.scod.DTO.PersonaRegisterDTO;
 import com.isei.scod.DTO.RuoloDTO;
 import com.isei.scod.Entity.AnpePersona;
 import com.isei.scod.Entity.AnrpRuolopersona;
@@ -15,7 +17,9 @@ import com.isei.scod.Repository.AnruRuoloRepository;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -37,6 +41,10 @@ public class PersonaService {
 
     @Autowired
     RuoloMapper ruoloMapper;
+    
+    private static final String ANPEPERSONA = "ANPE PERSONA";
+    private static final String ANRPRUOLOPERSONA = "ANRP RUOLO PERSONA";
+    
 
 
     public Boolean saveAnpePersona(@Valid PersonaDTO dto) {
@@ -53,18 +61,18 @@ public class PersonaService {
 
         AnpePersona entity = personaMapper.fromAnpePersonaDTOToEntity(dto);
 
-        return entity = anpePersonaRepository.save(entity);
+        return anpePersonaRepository.save(entity);
 
     }
 
-    public PersonaLoginDTO getPersonaLoginDTOById(Integer id) throws NotFoundException {
+    public PersonaAnagraficaDTO getPersonaAnagraficaDTOById(Integer id) throws NotFoundException {
 
         Optional<AnpePersona> entity =  anpePersonaRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AnpePersona.class, id );
+            throw new NotFoundException(ANPEPERSONA, id );
 
-        PersonaLoginDTO dto = personaMapper.fromAnpePersonaEntityToPersonaLoginDTO(entity.get());
+        PersonaAnagraficaDTO dto = personaMapper.fromAnpePersonaEntityToPersonaAnagraficaDTO(entity.get());
 
         dto.setRuoli(getRuoloPersonaById(id));
 
@@ -78,7 +86,7 @@ public class PersonaService {
         Optional<AnpePersona> entity =  anpePersonaRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AnpePersona.class, id );
+            throw new NotFoundException(ANPEPERSONA, id );
 
         PersonaDTO dto = personaMapper.fromAnpePersonaEntityToPersonaDTO(entity.get());
 
@@ -91,7 +99,7 @@ public class PersonaService {
         List<AnrpRuolopersona> ruolopersonaList =  ruoloPersonaRepository.findByIdPersona(id);
 
         if(ruolopersonaList.isEmpty())
-            throw new NotFoundException(AnrpRuolopersona.class, AnpePersona.class, id);
+            throw new NotFoundException(ANRPRUOLOPERSONA, ANPEPERSONA, id);
 
         List<AnruRuolo> ruoloList = new ArrayList<>();
 
@@ -112,7 +120,37 @@ public class PersonaService {
         return true;
     }
 
+    public Boolean convertAndSavePersonaDTO(String persona, List<MultipartFile> file) {
 
+        PersonaRegisterDTO dto = getJson(persona, file);
 
+        //map
+        // save su tab persona
+
+        return true;
+
+    }
+
+    public PersonaRegisterDTO getJson(String persona, List<MultipartFile> file) {
+
+        PersonaRegisterDTO dto = new PersonaRegisterDTO();
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            dto = objectMapper.readValue(persona, PersonaRegisterDTO.class);
+
+        } catch(IOException e) {
+            e.printStackTrace();
+        }
+
+        dto.setAnpeCertificazioni(file.get(0));
+        dto.setAnpeCv(file.get(1));
+        dto.setAnpeDocumento(file.get(2));
+        dto.setAnpeCvAziendale(file.get(3));
+        dto.setAnpeTitoliStudio(file.get(4));
+
+        return dto;
+
+    }
 
 }

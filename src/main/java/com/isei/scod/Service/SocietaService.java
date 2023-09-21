@@ -26,6 +26,10 @@ public class SocietaService {
     @Autowired
     AntsTipoSocietaRepository antsTipoSocietaRepository;
 
+    private static final String ANSOSOCIETA = "ANSO SOCIETA";
+    private static final String ANTSTIPOSOCIETA = "ANTS TIPO SOCIETA";
+
+
     public Boolean saveAnsoSocieta(@Valid SocietaDTO dto) {
 
         AnsoSocieta entity = societaMapper.fromAnsoSocietaDTOToEntity(dto);
@@ -41,7 +45,7 @@ public class SocietaService {
         Optional<AnsoSocieta> entity =  ansoSocietaRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AnsoSocieta.class, id );
+            throw new NotFoundException(ANSOSOCIETA, id );
 
         return societaMapper.fromAnsoSocietaEntityToDTO(entity.get());
 
@@ -52,7 +56,7 @@ public class SocietaService {
         Optional<AntsTipoSocieta> entity =  antsTipoSocietaRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AntsTipoSocieta.class, id );
+            throw new NotFoundException(ANTSTIPOSOCIETA, id );
 
         return societaMapper.fromTipoSocietaEntityToDTO(entity.get());
 

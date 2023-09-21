@@ -21,12 +21,14 @@ public class RuoloPersonaService {
     @Autowired
     AnrpRuoloPersonaRepository anrpRuoloPersonaRepository;
 
+    private static final String ANPEPERSONA = "ANPE PERSONA";
+
     public RuoloPersonaDTO getAnrpRuoloPersonaById(Integer id) throws NotFoundException {
 
         Optional<AnrpRuolopersona> entity =  anrpRuoloPersonaRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AnpePersona.class, id );
+            throw new NotFoundException(ANPEPERSONA, id );
 
         return ruoloPersonaMapper.fromAnrpRuoloPersonaEntityToDTO(entity.get());
 

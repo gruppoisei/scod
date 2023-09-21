@@ -34,12 +34,19 @@ public class GeoService {
     @Autowired
     GeoMapper geoMapper;
 
+    private static final String GEPAPAESE = "GEPA PAESE";
+    private static final String GEPACOMUNE = "GEPA COMUNE";
+    private static final String GETOTOPONIMO = "GETO TOPONIMO";
+    private static final String GEPRPROVINCIA = "GEPR PROVINCIA";
+    private static final String GEREREGIONE = "GERE REGIONE";
+    private static final String GEAGAREAGEOGRAFICA = "GEAG AREA GEOGRAFICA";
+
     public PaeseDTO getPaeseById(Integer id) throws NotFoundException {
 
         Optional<GepaPaese> entity =  gepaPaeseRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(GepaPaese.class, id );
+            throw new NotFoundException(GEPAPAESE, id );
 
         return geoMapper.fromPaeseEntityToDTO(entity.get());
 
@@ -50,7 +57,7 @@ public class GeoService {
         Optional<GecoComune> entity = gecoComuneRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(GecoComune.class, id);
+            throw new NotFoundException(GEPACOMUNE, id);
 
         return geoMapper.fromComuneEntitytoDTO(entity.get());
     }
@@ -60,7 +67,7 @@ public class GeoService {
         Optional<GetoToponimo> entity = getoToponimoRepository.findById(toponimo);
 
         if (!entity.isPresent())
-            throw new NotFoundException(GetoToponimo.class, toponimo);
+            throw new NotFoundException(GETOTOPONIMO, toponimo);
 
         return geoMapper.fromToponimoEntitytoDTO(entity.get());
     }
@@ -70,7 +77,7 @@ public class GeoService {
         Optional<GeprProvincia> entity = geprProvinciaRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(GeprProvincia.class, id);
+            throw new NotFoundException(GEPRPROVINCIA, id);
 
         return geoMapper.fromProvinciaEntityToDTO(entity.get());
     }
@@ -80,7 +87,7 @@ public class GeoService {
         Optional<GereRegione> entity = gereRegioneRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(GereRegione.class, id);
+            throw new NotFoundException(GEREREGIONE, id);
 
         return geoMapper.fromRegioneEntityToDTO(entity.get());
     }
@@ -90,7 +97,7 @@ public class GeoService {
         Optional<GeagAreaGeografica> entity = geagAreaGeograficaRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(GeagAreaGeografica.class, id);
+            throw new NotFoundException(GEAGAREAGEOGRAFICA, id);
 
         return geoMapper.fromAreaGeograficaEntityToDTO(entity.get());
     }

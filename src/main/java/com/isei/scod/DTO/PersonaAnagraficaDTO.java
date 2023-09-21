@@ -10,7 +10,7 @@ import java.util.List;
 
 @NoArgsConstructor
 @AllArgsConstructor
-public class PersonaLoginDTO {
+public class PersonaAnagraficaDTO {
 
     private Integer id;
 

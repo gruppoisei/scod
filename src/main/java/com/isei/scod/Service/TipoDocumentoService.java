@@ -20,6 +20,8 @@ public class TipoDocumentoService {
     @Autowired
     TipoDocumentoMapper tipoDocumentoMapper;
 
+    private static final String ALTATIPODOCUMENTO = "ALTA TIPO DOCUMENTO";
+
     public Boolean saveTipoDocumento(@Valid TipoDocumentoDTO dto) {
 
         AltaTipodocumento entity = tipoDocumentoMapper.fromAltaTipoDocumentoDTOToEntity(dto);
@@ -35,7 +37,7 @@ public class TipoDocumentoService {
         Optional<AltaTipodocumento> entity =  altaTipoDocumentoRepository.findById(id);
 
         if (!entity.isPresent())
-            throw new NotFoundException(AltaTipodocumento.class, id );
+            throw new NotFoundException(ALTATIPODOCUMENTO, id );
 
         return tipoDocumentoMapper.fromAltaTipoDocumentoEntityToDTO(entity.get());
 

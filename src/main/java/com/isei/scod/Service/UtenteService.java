@@ -31,6 +31,8 @@ public class UtenteService {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    private static final String SYUTUTENTE = "SYUT UTENTE";
+
 
     public Boolean registerUser(@Valid RegisterUserDTO registerUserDTO) {
         SyutUtente newUser = utenteMapper.fromRegisterDTOToUtente(registerUserDTO);
@@ -45,7 +47,7 @@ public class UtenteService {
 
         Optional<SyutUtente> utente = syutUtenteRepository.findById(idUser);
 
-        utente.orElseThrow(() -> new NotFoundException(SyutUtente.class, idUser));
+        utente.orElseThrow(() -> new NotFoundException(SYUTUTENTE, idUser));
 
         syutUtenteRepository.setFlagAttivaFalse(idUser);
 
